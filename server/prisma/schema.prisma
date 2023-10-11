@@ -11,13 +11,26 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?  @db.VarChar(40)
-  password  String   @db.VarChar(10)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  posts     Post[]
+  id            Int            @id @unique @default(autoincrement())
+  refreshTokens RefreshToken[] //relacion de user con refreshTokens
+  userId        String         @unique
+  email         String         @unique
+  name          String?        @db.VarChar(40)
+  password      String         @db.VarChar(10)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  posts         Post[]
+}
+
+model RefreshToken {
+  id          String   @id @unique
+  userId      Int
+  hashedToken String
+  expires     DateTime
+  User        User?    @relation(fields: [userId], references: [id]) //relacion de refreshToken con user
+  revoked     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Post {
