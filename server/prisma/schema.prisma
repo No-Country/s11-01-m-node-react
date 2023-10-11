@@ -15,7 +15,7 @@ model User {
   refreshTokens RefreshToken[] //relacion de user con refreshTokens
   userId        String         @unique
   email         String         @unique
-  name          String?        @db.VarChar(40)
+  username      String         @db.VarChar(40) //cambiado de name a username 
   password      String         @db.VarChar(10)
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
