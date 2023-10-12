@@ -5,7 +5,7 @@ const types=[
 const ingredients=[
   "meet", "chiken", "milk","bananas", "apples", "eggs", "flour", "bacon", "butter", "onions", "tomatoes"
 ]
-const Home = () => {
+const SearchRecipies = () => {
   const [userSelection, setUserSelection]= useState({
     foodType:"",
     ingredients1: "",
@@ -18,7 +18,6 @@ const Home = () => {
 
   return (
     <>
-    <div>Home</div>
     <select value={userSelection.foodType} onChange={(e) => setUserSelection({ ...userSelection, foodType: e.target.value })}>
              <option value="">Choose a Type</option>
              {types.map((item, key) => (
@@ -55,4 +54,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default SearchRecipies
