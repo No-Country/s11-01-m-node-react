@@ -1,6 +1,13 @@
 import bcrypt from "bcrypt";
 import db from "../db/db.server";
 
+interface User {
+  username: string;
+  email: string;
+  password: string;
+}
+
+
 // Obtener el usuario por id
 async function getUserById(id: string) {
   return db.user.findUnique({
@@ -19,19 +26,20 @@ async function getUserByEmail(email: string) {
 }
 
 // Crear un usuario
-interface User {
-  username: string;
-  email: string;
-  password: string;
+async function createUser(user: User): Promise<any> {
+  const hashedPassword = await bcrypt.hash(user.password, 10);
+  return db.user.create({
+    data: {
+      username: user.username,
+      email: user.email,
+      password: hashedPassword,
+      userId: 'some_id',
+    },
+  });
 }
 
-// async function createUser(user: User): Promise<any> {
-//   const hashedPassword = await bcrypt.hash(user.password, 10);
-//   return db.user.create({
-//     data: {
-//       username: user.username,
-//       email: user.email,
-//       password: hashedPassword,
-//     },
-//     },
-//   });
+export default {
+  getUserById,
+  getUserByEmail,
+  createUser
+}
