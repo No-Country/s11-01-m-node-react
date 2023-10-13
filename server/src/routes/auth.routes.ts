@@ -1,38 +1,8 @@
-import express, { Request, Response } from 'express';
-import { v4 as uuidv4 } from 'uuid';
-import addRefreshTokenToWhitelist from '../services/auth.services';
-import { generateTokens } from '../utils/jwt';
+import express, { Router } from 'express';
+import register from '../controllers/auth.controllers';
 
-const router = express.Router();
-const {
-    findUserByEmail,
-    createUserByEmailAndPassword,
-} = require('../services/users.services')
+const router: Router = express.Router();
 
-router.post('/register', async (req: Request, res: Response, next: any) => {
-    try {
-        const { email, password } = req.body;
-        if (!email || !password) {
-            res.status(404);
-            throw new Error('You must provide an email and a password.');
-        }
-        const existingUser = await findUserByEmail(email);
-        if (existingUser) {
-            res.status(400);
-            throw new Error('Email is already in use');
-        }
-        const user = await createUserByEmailAndPassword({ email, password });
-        const jti = uuidv4();
-        const { accessToken, refreshToken } = generateTokens(user, jti);
-        await addRefreshTokenToWhitelist({ jti, refreshToken, userId: user.id });
-
-        res.json({
-            accessToken,
-            refreshToken
-        });
-    } catch (err) {
-        next(err);
-    }
-});
+router.post('/register', register);
 
 export default router;
