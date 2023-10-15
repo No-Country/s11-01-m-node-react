@@ -20,15 +20,18 @@ const SearchRecipies = () => {
     }
   }, [userSelection.dietType]);
   
- console.log(userSelection)
+ 
  
   const secondIngredientList = ingredients.filter(ingredient => ingredient !== userSelection.firstIngredient);
   const lastIngredientList = secondIngredientList.filter(secondIngredientList => secondIngredientList !== userSelection.secondIngredient);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-   
-    console.log("User Selection:", userSelection);
+    const searchData = {
+      dietTypeSelected: userSelection.dietType, 
+      ingredientsSelected: [userSelection.firstIngredient, userSelection.secondIngredient, userSelection.thirdIngredient]
+    }
+    console.log(searchData)
   };
 
   return (
