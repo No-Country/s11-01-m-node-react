@@ -18,7 +18,7 @@ const SearchRecipies = () => {
     } else {
       setIngredients([]);
     }
-  }, [userSelection.dietType]);
+  }, [userSelection.dietType, dietData.lists]);
   
  
  
@@ -28,7 +28,7 @@ const SearchRecipies = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const searchData = {
-      dietTypeSelected: userSelection.dietType, 
+      dietTypeSelected:  userSelection.dietType === "none" ? null : userSelection.dietType, 
       ingredientsSelected: [userSelection.firstIngredient, userSelection.secondIngredient, userSelection.thirdIngredient]
     }
     console.log(searchData)
@@ -36,6 +36,7 @@ const SearchRecipies = () => {
 
   return (
     <>
+    <p></p>
     <form onSubmit={handleFormSubmit}>
     <select value={userSelection.dietType} 
     onChange={(e) => setUserSelection({ ...userSelection, dietType: e.target.value })}>
