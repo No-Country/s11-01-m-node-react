@@ -1,32 +1,49 @@
-import { useState } from "react"
-const types=[
-  "vegan", "vegetarian", "lowfat","glutenfree"
-]
-const ingredients=[
-  "meet", "chiken", "milk","bananas", "apples", "eggs", "flour", "bacon", "butter", "onions", "tomatoes"
-]
+import { useState, useEffect } from "react"
+import dietTexts from "../../assets/Texts/diets.json"
+
 const SearchRecipies = () => {
+  const dietData= dietTexts
   const [userSelection, setUserSelection]= useState({
-    foodType:"",
-    ingredients1: "",
-    ingredients2: "",
-    ingredients3: ""
+    dietType:"",
+    firstIngredient: "",
+    secondIngredient: "" || null,
+    thirdIngredient: "" || null
   })
+  const [ingredients, setIngredients]= useState([])
   
-  const secondIngredientList = ingredients.filter(ingredient => ingredient !== userSelection.ingredients1);
-  const lastIngredientList = secondIngredientList.filter(secondIngredientList => secondIngredientList !== userSelection.ingredients2)
+  useEffect(() => {
+    if (userSelection.dietType) {
+      const selectedIngredients = dietData.lists[userSelection.dietType];
+      setIngredients(selectedIngredients);
+    } else {
+      setIngredients([]);
+    }
+  }, [userSelection.dietType]);
+  
+ console.log(userSelection)
+ 
+  const secondIngredientList = ingredients.filter(ingredient => ingredient !== userSelection.firstIngredient);
+  const lastIngredientList = secondIngredientList.filter(secondIngredientList => secondIngredientList !== userSelection.secondIngredient);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+   
+    console.log("User Selection:", userSelection);
+  };
 
   return (
     <>
-    <select value={userSelection.foodType} onChange={(e) => setUserSelection({ ...userSelection, foodType: e.target.value })}>
-             <option value="">Choose a Type</option>
-             {types.map((item, key) => (
+    <form onSubmit={handleFormSubmit}>
+    <select value={userSelection.dietType} 
+    onChange={(e) => setUserSelection({ ...userSelection, dietType: e.target.value })}>
+             <option value="">Choose a diet type</option>
+             {dietData.diets.types.map((item, key) => (
           <option key={key} value={item}>
             {item}
           </option>
         ))}
       </select> 
-      <select value={userSelection.ingredients1} onChange={(e) => setUserSelection({ ...userSelection, ingredients1: e.target.value })}>
+      <select value={userSelection.firstIngredient} onChange={(e) => setUserSelection({ ...userSelection, firstIngredient: e.target.value })}>
              <option value="">Choose an ingredient</option>
              {ingredients.map((item, key) => (
           <option key={key} value={item}>
@@ -34,7 +51,7 @@ const SearchRecipies = () => {
           </option>
         ))}
       </select> 
-      <select value={userSelection.ingredients2} onChange={(e) => setUserSelection({ ...userSelection, ingredients2: e.target.value })}>
+      <select value={userSelection.secondIngredient} onChange={(e) => setUserSelection({ ...userSelection, secondIngredient: e.target.value })}>
              <option value="">Choose other ingredient</option>
              {secondIngredientList.map((item, key) => (
           <option key={key} value={item}>
@@ -42,7 +59,7 @@ const SearchRecipies = () => {
           </option>
         ))}
       </select> 
-      <select value={userSelection.ingredients3} onChange={(e) => setUserSelection({ ...userSelection, ingredients3: e.target.value })}>
+      <select value={userSelection.thirdIngredient} onChange={(e) => setUserSelection({ ...userSelection, thirdIngredient: e.target.value })}>
              <option value="">Choose one more</option>
              {lastIngredientList.map((item, key) => (
           <option key={key} value={item}>
@@ -50,6 +67,10 @@ const SearchRecipies = () => {
           </option>
         ))}
       </select> 
+      <div>
+      <button type="submit">Submit</button>
+      </div>
+      </form>
     </>
   )
 }
