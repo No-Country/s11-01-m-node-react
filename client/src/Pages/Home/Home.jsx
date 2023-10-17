@@ -1,10 +1,12 @@
 
-import SearchRecipies from "../../Components/Home/SearchRecipies"
+
+import AutosuggestInput from "./SearchInput"
+
 const Home = () => {
   return (
-    <div>
-        <h3>Home</h3>
-        <SearchRecipies />
+    <div className="mobile">
+
+        <AutosuggestInput />
     </div>
   )
 }
