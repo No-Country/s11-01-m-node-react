@@ -1,0 +1,112 @@
+.mobile{
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+.background{
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.title-one{
+color:  #070707;
+font-size: 24px;
+font-weight: 600;
+line-height: 28px;
+}
+.title-two{
+    color:  #6B7280;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    margin-top: -2rem;
+}
+.search-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    
+}
+.search-box{
+    border-radius: 2rem;
+    background: #D9D9D9;
+    padding: 0 .4rem;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 70%;
+    box-sizing: border-box;
+}
+.search-icon{
+    padding-top: .2rem;
+}
+.add-box button{
+    border-radius: 1rem;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 80px;
+    font-weight: 600;
+    line-height: 1px;
+}
+.input{
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  width: 60%;
+}
+.input:focus-visible{
+    border-color: transparent;
+}
+.selected-ingredients{
+    display: flex;
+    margin: 1rem 0;
+    
+}
+.ingredients{
+    background-color: #9CA3AF;
+    border-radius: 2rem;
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .3rem 0 .5rem;
+    margin-right: 1rem;
+}
+.ingredients p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 14;
+}
+.ingredients button{
+    background-color: transparent;
+    padding: 0 .4rem;
+    margin-top: .3rem;
+}
+.diets{
+    padding: 0 0 1rem 0;
+}
+.diet-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.diet-button{
+    background-color: #9CA3AF;
+    font-size: .9rem;
+    margin-bottom: .7rem;
+    width: 30%;
+}
+.search-button{
+    width: 90%;
+    background-color: transparent;
+    border: 1px solid #6B7280;
+    border-radius: 2rem;
+}
