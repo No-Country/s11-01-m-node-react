@@ -13,12 +13,32 @@ export const register = async (req: Request, res: Response, next: NextFunction):
         const { email, password } = req.body;
         if (!email || !password) {
             res.status(404);
-            throw new Error('You must provide an email and a password.');
+            throw {
+                code: 5678,
+                message: 'You must provde an email or password',
+                errors: [
+                    {
+                        code: 5678,
+                        field: 'email',
+                        message: 'You must provde an email or password'
+                    }
+                ]
+            };
         }
         const existingUser = await getUserByEmail(email);
         if (existingUser) {
             res.status(400);
-            throw new Error('Email is already in use');
+            throw {
+                code: 2345,
+                message: 'Email already exists',
+                errors: [
+                    {
+                        code: 2345,
+                        field: 'email',
+                        message: 'Email already exists'
+                    }
+                ]
+            }
         }
         const user = await createUser({
             email, password,
