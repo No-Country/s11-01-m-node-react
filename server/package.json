@@ -7,6 +7,10 @@
     "tsc": "tsc",
     "build": "npm run tsc",
     "start": "node build/index.js"
+    
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
