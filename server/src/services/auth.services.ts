@@ -5,7 +5,7 @@ const db = new PrismaClient();
 
 //Crear un token de actualización
 
-async function addRefreshTokenToWhitelist({ jti, refreshToken, userId }: { jti: string; refreshToken: string; userId: number }): Promise<void> {
+export async function addRefreshTokenToWhitelist({ jti, refreshToken, userId }: { jti: string; refreshToken: string; userId: number }): Promise<void> {
     await db.refreshToken.create({
         data: {
             id: jti,
@@ -18,7 +18,7 @@ async function addRefreshTokenToWhitelist({ jti, refreshToken, userId }: { jti: 
 
 //Encontrar token por id
 
-async function findRefreshTokenById(id: string) {
+export async function findRefreshTokenById(id: string) {
     return await db.refreshToken.findUnique({
         where: {
             id,
@@ -28,7 +28,7 @@ async function findRefreshTokenById(id: string) {
 
 
 //Borrado de Tokens después de su uso
-async function deleteRefreshToken(id: string) {
+export async function deleteRefreshToken(id: string) {
     await db.refreshToken.update({
         where: {
             id,
@@ -40,7 +40,7 @@ async function deleteRefreshToken(id: string) {
 }
 
 //Revocar un token 
-async function revokeTokens(userId: number) {
+export async function revokeTokens(userId: number) {
     await db.refreshToken.updateMany({
         where: {
             userId
@@ -51,10 +51,3 @@ async function revokeTokens(userId: number) {
     });
 }
 
-export default {
-    addRefreshTokenToWhitelist,
-    findRefreshTokenById,
-    deleteRefreshToken,
-    revokeTokens
-
-}

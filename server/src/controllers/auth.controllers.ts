@@ -1,12 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import { v4 as uuidv4 } from 'uuid';
-import addRefreshTokenToWhitelist from "../services/auth.services";
-import { generateTokens } from '../utils/jwt';
-
+import { addRefreshTokenToWhitelist } from "../services/auth.services";
 import {
     createUser,
     getUserByEmail,
 } from '../services/users.services';
+import { generateTokens } from '../utils/jwt';
 
 export const register = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
@@ -16,13 +15,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
             throw {
                 code: 5678,
                 message: 'You must provde an email or password',
-                errors: [
-                    {
-                        code: 5678,
-                        field: 'email',
-                        message: 'You must provde an email or password'
-                    }
-                ]
+                data: { email, password }
             };
         }
         const existingUser = await getUserByEmail(email);
@@ -31,13 +24,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
             throw {
                 code: 2345,
                 message: 'Email already exists',
-                errors: [
-                    {
-                        code: 2345,
-                        field: 'email',
-                        message: 'Email already exists'
-                    }
-                ]
+                data: { email, password }
             }
         }
         const user = await createUser({
@@ -46,7 +33,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
         });
         const jti = uuidv4();
         const { accessToken, refreshToken } = generateTokens(user, jti);
-        await addRefreshTokenToWhitelist.addRefreshTokenToWhitelist({ jti, refreshToken, userId: user.id });
+        await addRefreshTokenToWhitelist({ jti, refreshToken, userId: user.id });
 
         res.json({
             accessToken,
