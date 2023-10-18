@@ -1,13 +1,17 @@
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home/Home";
+import Landing from "./Pages/Landing/Landing";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/login" element={''} />
+        <Route exact path="/" element={<Landing />} />
+       
         </Routes>
       </BrowserRouter>
     </>
