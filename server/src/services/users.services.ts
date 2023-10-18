@@ -35,6 +35,10 @@ export async function createUser(user: User): Promise<any> {
       password: hashedPassword,
       userId: 'some_id',
     },
+    select: {
+      username: true,
+      email: true
+    }
   });
 }
 

@@ -1,10 +1,11 @@
-import express from "express"
-import authRoutes from '../src/routes/auth.routes'
-const app = express()
+import cors from "cors";
+import express from "express";
+import router from "./routes/index";
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use('/v1', authRoutes)
+const app = express();
 
-
-export default app
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use("v1", router);
+export default app;
