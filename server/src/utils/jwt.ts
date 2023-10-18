@@ -8,11 +8,11 @@ interface User {
 
 //Este token de acceso tiene una duracion de 5 minutos
 export const generateToken = (user: User): string => {
-  return jsonwebtoken.sign(user, process.env.JWT_SECRET || "secret", {
+  return jsonwebtoken.sign(user, process.env.JWT_SECRET as string, {
     expiresIn: "5m",
   });
 }
 
 export const verifyToken = (token: string) => {
-  return jsonwebtoken.verify(token, process.env.JWT_SECRET || "secret")
+  return jsonwebtoken.verify(token, process.env.JWT_SECRET as string)
 }
