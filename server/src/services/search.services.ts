@@ -1,7 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import { fetchRecipesFromAPI } from "../middlewares/spoonclarAPI.middleware";
 
-const prisma = new PrismaClient();
-
+// Definimos la interfaz para las recetas
 interface Search {
   id: number;
   search: string;
@@ -11,15 +10,18 @@ interface Search {
   userId: string;
 }
 
-// Obtener los filtros de búsqueda de la api
+// Función para obtener las recetas
 
-export const getSearch = async (search: string) => {
-  const result = await prisma.search.findMany({
-    where: {
-      search: {
-        contains: search,
-      },
-    },
-  });
-  return result;
+export const getRecipes = async (ingredients: string[], dietType: string) => {
+  const res = await fetchRecipesFromAPI(ingredients, dietType);
+  return res;
 };
+
+// // Función para crear una receta
+// export const createSearch = async (search: Search) => {
+//   // const newSearch = await Search.create(search);
+//   // return newSearch;
+// }
+
+// // Función para obtener todas las recetas
+// export const getAllSearch = async () => {}
