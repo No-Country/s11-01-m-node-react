@@ -9,7 +9,7 @@ interface User {
 
 
 // Obtener el usuario por id
-async function getUserById(id: string) {
+export async function getUserById(id: string) {
   return db.user.findUnique({
     where: {
       id: parseInt(id),
@@ -17,7 +17,7 @@ async function getUserById(id: string) {
   });
 }
 // Obetener el usuario por email
-async function getUserByEmail(email: string) {
+export async function getUserByEmail(email: string) {
   return db.user.findUnique({
     where: {
       email: email,
@@ -26,7 +26,7 @@ async function getUserByEmail(email: string) {
 }
 
 // Crear un usuario
-async function createUser(user: User): Promise<any> {
+export async function createUser(user: User): Promise<any> {
   const hashedPassword = await bcrypt.hash(user.password, 10);
   return db.user.create({
     data: {
@@ -38,8 +38,4 @@ async function createUser(user: User): Promise<any> {
   });
 }
 
-export default {
-  getUserById,
-  getUserByEmail,
-  createUser
-}
+
