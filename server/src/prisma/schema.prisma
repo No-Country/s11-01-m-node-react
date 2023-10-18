@@ -16,7 +16,7 @@ model User {
   userId        String         @unique
   email         String         @unique
   username      String         @db.VarChar(40) //cambiado de name a username 
-  password      String         @db.VarChar(10)
+  password      String         @db.VarChar(20)
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   posts         Post[]

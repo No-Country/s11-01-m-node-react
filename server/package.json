@@ -7,15 +7,19 @@
     "tsc": "tsc",
     "build": "npm run tsc",
     "start": "node build/index.js"
+    
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hapi/joi": "^17.1.1",
     "@prisma/client": "^5.4.2",
     "bcrypt": "^5.1.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
