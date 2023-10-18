@@ -10,3 +10,5 @@ router.use("/auth", authRoutes);
 // router.use("/uploadposts", postRoutes) //ruta para subir recetas
 // router.use("/uploadcomments", commentRoutes) //ruta para subir comentarios
 // router.use("/savedposts", savedRoutes) //ruta para guardar recetas
+
+export default router;
