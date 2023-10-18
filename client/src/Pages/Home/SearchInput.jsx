@@ -1,11 +1,20 @@
 import dietTexts from "../../assets/Texts/diets.json";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./home.css";
+import { inputIngredients } from "../../store/actions/IngredientsAction";
 
 const SearchInput = () => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [dietTypeSelected, setDietTypeSelected] = useState("");
+
+  const dispatch = useDispatch()
+  const getState = useSelector((state) => state.ingredients)
+
+  const getReceta = ()=> {
+    console.log(getState)
+  }
 
   const handleChange = e => {
     setSearchInput(e.target.value);
@@ -56,6 +65,9 @@ const SearchInput = () => {
       ingredientSelected: selectedIngredients,
       dietTypeSelected: dietTypeSelected
     };
+    dispatch(inputIngredients(searchData))
+    getReceta()
+    
     console.log(searchData);
   };
 
@@ -132,7 +144,7 @@ const SearchInput = () => {
           )}
         </div>
       </div>
-      <button className="search-button" type="submit" onClick={sendIngredients}>
+      <button className="search-button" type="submit" onClick={(e)=>sendIngredients(e)}>
         Search Recipies
       </button>
     </div>
