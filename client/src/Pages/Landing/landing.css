@@ -20,3 +20,30 @@
     padding: 14px 90px;
     border-radius: 16px;
 }
+.button:hover{
+    border: none;
+    background-color: #F2E705;
+}
+@media only screen and (min-width: 700px) and (max-width: 1025px){
+    .title-box{      
+        margin-top: -400px
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .title-box{
+        text-align: center;
+        margin: -650px auto 0px;
+        width: 100%;
+    }
+    .title-box h5{
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 400px;
+    }
+    .logo-landing{
+       position: absolute;
+        margin: 20% 10%;
+        width: 80%;
+        
+    }
+}

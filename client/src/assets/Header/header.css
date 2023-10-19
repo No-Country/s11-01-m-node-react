@@ -9,3 +9,13 @@
 .logo{
     width: 110px;
 }
+.login-button{
+    background-color: transparent;
+    border: 1px solid #F2CB05;
+    font-weight: 700;
+    height: 40px;
+}
+.login-button:hover{
+    background-color: #F2E705;
+    border: none;
+}
