@@ -10,3 +10,31 @@ div{
   padding: 0;
   margin: 0;
 }
+button:focus-visible{
+  border: none;
+  outline: none;
+}
+input:focus-visible{
+  border: none;
+  outline: none;
+  outline-color: none;
+}
+button:hover{
+  outline: none;
+}
+button{
+  outline: none;
+  outline-color: none;
+}
+button:active{
+  outline: none;
+  border-color: none;
+  outline-color: none;
+
+}
+button:focus{
+  outline: none;
+  border: none;
+  outline-color:#F2CB05;
+
+}

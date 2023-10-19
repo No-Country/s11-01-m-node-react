@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import "./home.css";
 import { inputIngredients } from "../../store/actions/IngredientsAction";
 import { Icon } from '@iconify/react';
+import SearchHeader from '../../assets/img/SearchHeader.png'
+import { isMobileOnly } from "react-device-detect";
+
 
 const SearchInput = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -75,10 +78,12 @@ const SearchInput = () => {
   console.log(dietTypeSelected);
 
   return (
-    <div className="background">
-      <h4 className="title-one">Cook with what you have: </h4>
-      <h4 className="title-two">find perfect recipes</h4>
-      <div>
+    <>
+  {isMobileOnly ? null :  <img src={SearchHeader} className="search-header" />}
+  
+    <div className="background">     
+      <h4 className="title-one">Find perfect recipes</h4>
+      <div className="form-box">
         <form className="search-section" onSubmit={handleSubmit}>
           <div className="search-box">
             <span className="search-icon">
@@ -92,12 +97,11 @@ const SearchInput = () => {
               placeholder="Type ingredient"
             />
           </div>
-          <div className="add-box">
-            <button type="submit">Add</button>
+          <div>
+            <button type="submit" className="add-button">Add</button>
           </div>
         </form>
-      </div>
-      <div className="selected-ingredients">
+        <div className="selected-ingredients">
         {selectedIngredients.map((ingredient, index) =>
           <div key={index} className="ingredients">
             <p>
@@ -110,15 +114,17 @@ const SearchInput = () => {
           </div>
         )}
       </div>
+      </div>
+     
       <div className="diets">
+        <p>Select the type of diet you prefer</p>
         <div className="diet-box">
-          {dietTexts.diets.types.map((type, index) =>
-            <button
-              key={index}
-              className="diet-button"
-              onClick={() => handleDiet(type)}
-            >
-              {type}
+          {dietTexts.diets.map((type, index) =>
+          <button key={index} className="diet-img-button" onClick={() => handleDiet(type.types)}>
+            <img src={type.img} alt={type.types} className="diet-img"/>
+            <p>
+              {type.title}
+            </p>
             </button>
           )}
         </div>
@@ -127,6 +133,7 @@ const SearchInput = () => {
         Search Recipies
       </button>
     </div>
+    </>
   );
 };
 

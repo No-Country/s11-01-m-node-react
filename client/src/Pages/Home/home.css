@@ -1,10 +1,6 @@
-.mobile {
-  width: 400px;
-  display: flex;
-  align-items: center;
-}
+
 .background {
-  width: 100%;
+  width: 100vw;
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -14,28 +10,25 @@
   font-weight: 600;
   line-height: 28px;
 }
-.title-two {
-  color: #6b7280;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 28px;
-  margin-top: -2rem;
+.form-box{
+  min-height: 100px;
 }
 .search-section {
-  width: 100%;
+  width: 40%;
   display: flex;
   justify-content: space-between;
-  height: 40px;
+  height: 30%;
 }
 .search-box {
   border-radius: 2rem;
-  background: #d9d9d9;
+  background: #F3F4F6;
   padding: 0 0.4rem;
   display: flex;
   align-items: center;
   height: 40px;
-  width: 70%;
+  width: 80%;
   box-sizing: border-box;
+  color: #6B7280;
 }
 .search-icon {
   padding-top: 0.2rem;
@@ -45,16 +38,21 @@
     height: 24px;
     color: #070707;
 }
-.add-box button {
+.add-button {
   border-radius: 1rem;
-  background-color: #d9d9d9;
+  background-color: #F2CB05;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40px;
   width: 80px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1px;
+  border: none;
+}
+.add-button:hover{
+  border: none;
+  background-color: #F2E705;
 }
 .input {
   background-color: transparent;
@@ -71,7 +69,6 @@
   margin: 1rem 0;
 }
 .ingredients {
-  background-color: #9ca3af;
   border-radius: 2rem;
   width: fit-content;
   height: 30px;
@@ -80,11 +77,11 @@
   align-items: center;
   padding: 0 0.3rem 0 0.5rem;
   margin-right: 1rem;
+  border: 1px solid #F2CB05;
 }
 .ingredients p {
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
   margin: 0;
   line-height: 14;
 }
@@ -97,19 +94,110 @@
   padding: 0 0 1rem 0;
 }
 .diet-box {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.diet-button {
-  background-color: #9ca3af;
-  font-size: 0.9rem;
-  margin-bottom: 0.7rem;
-  width: 30%;
+
+.diet-img{
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
+}
+.diet-img-button{
+  width: 150px;
+  height: 200px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: none;
+  overflow: hidden;
+  border-radius:0;
+}
+.diet-img-button:hover{
+  opacity: .5;
+}
+.diet-img-button:focus {
+  outline-color:#F2CB05;
+}
+.diet-img-button:active {
+  outline-color:#F2CB05;
+}
+.diet-img-button p{
+  position: relative;
+  margin-top: -40px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  z-index: 3;
 }
 .search-button {
-  width: 90%;
-  background-color: transparent;
-  border: 1px solid #6b7280;
-  border-radius: 2rem;
+  width: 40%;
+  border-radius: 1rem;
+  background-color: #F2CB05;
+}
+.diet-img-button::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Adjust the gradient colors and transparency as needed */
+  z-index: 1; 
+}
+@media only screen and (min-width: 700px) and (max-width: 1025px){
+  .search-section{
+    width: 50%;
+  }
+  .search-header{
+    height: 180px;
+    width: 100vw;
+    overflow:hidden;
+    object-fit: cover;
+  }
+  .diet-box{
+    width: 80%;
+  }
+  .diet-img-button{
+    width: 180px;
+    height: 130px;
+    margin-bottom: 12px;
+  }
+  .diet-img-button::before{
+    height: 130px;
+    width: 180px;
+  }
+  .diet-img{
+    width: 100%;
+  }
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 699px){
+  .search-section{
+    width: 100%;
+  }
+  .search-box{
+    width: 70%;
+  }
+  .title-one  {
+    margin-top: 14px
+  } 
+  .diet-img-button{
+    width: 170px;
+    height: 90px;
+    margin-bottom: 12px;
+  }
+  .diet-img-button::before{
+    height: 90px;
+    width: 170px;
+  }
+  .diet-img{
+    width: 100%;
+  }
+  .search-button {
+    width: 100%;
+}
 }

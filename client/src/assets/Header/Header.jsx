@@ -8,7 +8,7 @@ const Header = () => {
   const location= useLocation()
   return (
     location.pathname=== '/' && isMobileOnly ? (null):(
-    <div className= "header-backgound">
+    <div className="header-backgound">
       <Link to="/">
         <img src={Logo} className="logo" alt="" />
       </Link>
