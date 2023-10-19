@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { findByIngredients } from "../services/search.service";
-import { AppError } from "../errors/app-error";
-import { ERROR_MSGS } from "../constants/messages";
+import { findByIngredients } from "../services/search.services";
+import { AppError } from "../utils/app.error";
+import { ERROR_MSGS } from "../constants/errorMsgs";
 
 export const searchController = async (
   req: Request,
@@ -13,7 +13,7 @@ export const searchController = async (
     if (!ingredients || ingredients.length === 0) {
       return res.status(400).send({ error: "Ingredients are required." });
     }
-    const results = await findByIngredients(ingredients);
+    const results = await findByIngredients(ingredients, "vegetarian");
     return res.send(results);
   } catch (error) {
     if (!(error instanceof AppError)) {
