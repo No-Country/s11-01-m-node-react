@@ -1,16 +1,19 @@
-import { fetchRecipesFromAPI } from "../middlewares/spoonclarAPI.middleware";
+import { fetchRecipesFromAPI } from "../controllers/search.controllers";
 
 // Función para obtener las recetas
 
 export const getRecipes = async (ingredients: string[], dietType: string) => {
   const res = await fetchRecipesFromAPI(ingredients, dietType);
+
   return res;
 };
+
 export const findByIngredients = async (
   ingredients: string[],
   dietType: string
 ) => {
-  const res = await fetchRecipesFromAPI(ingredients, dietType);
+  const res = await fetchRecipesFromAPI(ingredients, dietType); // entra a la funcion de fetchRecipesFromAPI
+
   return res;
 };
 
