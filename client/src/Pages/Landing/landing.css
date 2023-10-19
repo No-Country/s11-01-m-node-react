@@ -1,5 +1,22 @@
 .landing-background{
     width: 100vw;
     height: 100vh;
-    text-align: center;
+}
+.big-img{
+    width: 100vw;
+}
+.title-box{
+    position: absolute;
+    margin-top: -570px;
+    margin-left: 60px;
+}
+.title-box h5{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 16px 0
+}
+.button{
+    background-color: #F2CB05;
+    padding: 14px 90px;
+    border-radius: 16px;
 }
