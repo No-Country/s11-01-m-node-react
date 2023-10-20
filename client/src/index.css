@@ -27,3 +27,6 @@ button {
 
 }
 
+input{
+  outline: none;
+}

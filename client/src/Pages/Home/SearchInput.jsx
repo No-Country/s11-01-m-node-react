@@ -5,6 +5,9 @@ import "./home.css";
 import { inputIngredients } from "../../store/actions/IngredientsAction";
 import { Icon } from '@iconify/react';
 import SelectDiet from "./SelectDiet";
+import {isMobileOnly } from "react-device-detect"
+import SelectDietMobile from "./SelectDietMobile";
+import { Link } from "react-router-dom";
 
 
 
@@ -12,6 +15,7 @@ const SearchInput = () => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [dietTypeSelected, setDietTypeSelected] = useState("");
+  const [error, setError] =useState("")
 
   const dispatch = useDispatch()
   const getState = useSelector((state) => state.ingredients)
@@ -41,15 +45,16 @@ const SearchInput = () => {
           if (selectedIngredients.length < 3) {
             setSelectedIngredients([...selectedIngredients, searchInput]);
             setSearchInput("");
+            setError("")
           } else {
-            alert("You can select a maximum of 3 ingredients.");
+            setError("You can select a maximum of 3 ingredients.");
           }
         }
       } else {
-        alert("Ingredient is already selected.");
+        setError("Ingredient is already selected.");
       }
     } else {
-      alert("Ingredient not found in our list.");
+      setError("Ingredient not found in our list.");
     }
   };
 
@@ -71,11 +76,8 @@ const SearchInput = () => {
     };
     dispatch(inputIngredients(searchData))
     getReceta()
-    
-    console.log(searchData);
   };
 
-  console.log(dietTypeSelected);
 
   return (
     <>
@@ -101,7 +103,8 @@ const SearchInput = () => {
         </form>
         <div className="selected-ingredients">
         {selectedIngredients.map((ingredient, index) =>
-          <div key={index} className="ingredients">
+          
+         <div key={index} className="ingredients">
             <p>
               {ingredient}{" "}
             </p>
@@ -110,13 +113,21 @@ const SearchInput = () => {
                 <Icon icon="mdi:close" className="close-icon"/>
               </button>}
           </div>
+          
         )}
       </div>
+      {error &&
+      <div className="ingredient-error">
+           <p>{error}</p>
+           </div>}
       </div>
-      <SelectDiet handleDiet={handleDiet}/>
+      {isMobileOnly ?
+      <SelectDietMobile handleDiet={handleDiet} /> :
+      <SelectDiet handleDiet={handleDiet}/>}
       <button className="search-button" type="submit" onClick={(e)=>sendIngredients(e)}>
         Search Recipies
       </button>
+      <Link to='/results'>Go to Recipies</Link>
     </div>
     </>
   );

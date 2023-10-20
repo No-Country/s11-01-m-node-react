@@ -26,7 +26,15 @@
 }
 @media only screen and (min-width: 700px) and (max-width: 1025px){
     .title-box{      
-        margin-top: -400px
+        margin-top: -300px;
+        margin-left: 40px;
+    }
+    .title-box h5{
+        font-size: 18px;
+
+    }
+    .button{
+        padding: 12px 60px;
     }
 }
 @media only screen and (min-width: 300px) and (max-width: 699px){

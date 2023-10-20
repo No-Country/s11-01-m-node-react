@@ -9,6 +9,10 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 28px;
+  margin: 24px 0 10px 2px;
+}
+.search-header{
+  width: 100vw;
 }
 .hero-title{
   font-weight: 700;
@@ -16,7 +20,7 @@
   position: relative;
   margin-left: 60px;
   margin-top: -140px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .form-box{
   min-height: 100px;
@@ -74,7 +78,7 @@
 }
 .selected-ingredients {
   display: flex;
-  margin: 1rem 0;
+  margin: .5rem 0 0 0;
 }
 .ingredients {
   border-radius: 2rem;
@@ -98,6 +102,13 @@
   padding: 0 0.4rem;
   margin-top: 0.3rem;
 }
+.ingredient-error{
+  width: 100%;
+  text-align: left;
+  margin-top: -12px;
+  font-size: 14px;
+  color: #BA0000;
+}
 .diets {
   padding: 0 0 1rem 0;
 }
@@ -108,35 +119,31 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .diet-img{
-  height: 100%;
-  object-position: 50% 50%;
+  height: 105%;
   object-fit: cover;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
 }
 .diet-img-button{
   width: 150px;
   height: 200px;
-  background-color: transparent;
-  border: none;
   padding: 0;
-  transition: none;
   overflow: hidden;
-  border-radius:0;
+  border-radius: 8px;
+  text-align: left;
+  box-sizing: border-box;
 }
 .diet-img-button:hover{
-  opacity: .5;
+  opacity: .7;
 }
 .diet-img-button:focus {
-  outline-color:#F2CB05;
+  border:3px solid #F2CB05;
 }
 .diet-img-button:active {
-  outline-color:#F2CB05;
+  border:3px solid #F2CB05;
 }
 .diet-img-button p{
-  position: relative;
-  margin-top: -40px;
+  position: absolute;
+  margin: -50px 0 0 20px;
   color: #fff;
   font-weight: 800;
   font-size: 18px;
@@ -147,16 +154,24 @@
   border-radius: 1rem;
   background-color: #F2CB05;
 }
-.search-button:focus{
-  outline-color: #F2CB05;
+.search-button:hover{
+  background-color: #F2E705;
 }
+
 .diet-img-button::before {
   content: "";
   position: absolute;
-  width: 150px;
+  width: 150px;  
   height: 200px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Adjust the gradient colors and transparency as needed */
   z-index: 1; 
+  border-radius: 8px;
+  
+}
+.more-button{
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
 }
 @media only screen and (min-width: 700px) and (max-width: 1025px){
   .hero-title{
@@ -166,7 +181,10 @@
     margin-left: 40px;
   }
   .search-section{
-    width: 50%;
+    width: 60%;
+  }
+  .search-box{
+    width: 75%;
   }
   .search-header{
     height: 180px;
@@ -189,6 +207,7 @@
   .diet-img{
     width: 100%;
   }
+
 
 }
 
