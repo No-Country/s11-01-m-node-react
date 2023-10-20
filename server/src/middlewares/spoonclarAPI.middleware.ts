@@ -1,8 +1,8 @@
-import { NextFunction, Request, Response } from "express";
 import axios from "axios";
-import AppError from "../utils/AppError";
+import { NextFunction, Request, Response } from "express";
 import ERROR_MSGS from "../constants/errorMsgs";
 import { HTTPCODES } from "../constants/httpCodes";
+import { AppError } from "../utils/app.error";
 
 const BASE_URL = "https://api.spoonacular.com/recipes/findByIngredients";
 const API_KEY = process.env.API_KEY;

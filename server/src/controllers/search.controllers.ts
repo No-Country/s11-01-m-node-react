@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
-import { findByIngredients } from "../services/search.service";
-import { AppError } from "../errors/app-error";
-import { ERROR_MSGS } from "../constants/messages";
+import { NextFunction, Request, Response } from "express";
+import { ERROR_MSGS } from "../constants/errorMsgs";
+import { findByIngredients } from "../services/search.services";
+import { AppError } from "../utils/app.error";
 
 export const searchController = async (
   req: Request,
