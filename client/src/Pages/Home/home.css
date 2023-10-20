@@ -1,112 +1,239 @@
-.mobile{
-    width: 400px;
-    display: flex;
-    align-items: center;
+
+.background {
+  width: 100vw;
+  padding: 2rem;
+  box-sizing: border-box;
 }
-.background{
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
+.title-one {
+  color: #070707;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 24px 0 10px 2px;
 }
-.title-one{
-color:  #070707;
-font-size: 24px;
-font-weight: 600;
-line-height: 28px;
+.search-header{
+  width: 100vw;
 }
-.title-two{
-    color:  #6B7280;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 28px;
-    margin-top: -2rem;
+.hero-title{
+  font-weight: 700;
+  font-size: 24px;
+  position: relative;
+  margin-left: 60px;
+  margin-top: -140px;
+  margin-bottom: 30px;
 }
-.search-section{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    
+.form-box{
+  min-height: 100px;
 }
-.search-box{
-    border-radius: 2rem;
-    background: #D9D9D9;
-    padding: 0 .4rem;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    width: 70%;
-    box-sizing: border-box;
+.search-section {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  height: 30%;
 }
-.search-icon{
-    padding-top: .2rem;
+.search-box {
+  border-radius: 2rem;
+  background: #F3F4F6;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 80%;
+  box-sizing: border-box;
+  color: #6B7280;
 }
-.add-box button{
-    border-radius: 1rem;
-    background-color: #D9D9D9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 80px;
-    font-weight: 600;
-    line-height: 1px;
+.search-icon {
+  padding-top: 0.2rem;
 }
-.input{
+.icon{
+    width: 24px;
+    height: 24px;
+    color: #070707;
+}
+.add-button {
+  border-radius: 1rem;
+  background-color: #F2CB05;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 80px;
+  font-weight: 700;
+  line-height: 1px;
+  border: none;
+}
+.add-button:hover{
+  border: none;
+  background-color: #F2E705;
+}
+.input {
   background-color: transparent;
   border: none;
   text-decoration: none;
   font-size: 16px;
   width: 60%;
 }
-.input:focus-visible{
-    border-color: transparent;
+.input:focus-visible {
+  border-color: transparent;
 }
-.selected-ingredients{
-    display: flex;
-    margin: 1rem 0;
-    
+.selected-ingredients {
+  display: flex;
+  margin: .5rem 0 0 0;
 }
-.ingredients{
-    background-color: #9CA3AF;
-    border-radius: 2rem;
-    width: fit-content;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 .3rem 0 .5rem;
-    margin-right: 1rem;
+.ingredients {
+  border-radius: 2rem;
+  width: fit-content;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.3rem 0 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #F2CB05;
 }
-.ingredients p{
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    margin: 0;
-    line-height: 14;
+.ingredients p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 14;
 }
-.ingredients button{
-    background-color: transparent;
-    padding: 0 .4rem;
-    margin-top: .3rem;
+.ingredients button {
+  background-color: transparent;
+  padding: 0 0.4rem;
+  margin-top: 0.3rem;
 }
-.diets{
-    padding: 0 0 1rem 0;
+.ingredient-error{
+  width: 100%;
+  text-align: left;
+  margin-top: -12px;
+  font-size: 14px;
+  color: #BA0000;
 }
-.diet-box{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.diets {
+  padding: 0 0 1rem 0;
 }
-.diet-button{
-    background-color: #9CA3AF;
-    font-size: .9rem;
-    margin-bottom: .7rem;
-    width: 30%;
+.diet-box {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.search-button{
-    width: 90%;
-    background-color: transparent;
-    border: 1px solid #6B7280;
-    border-radius: 2rem;
+.diet-img{
+  height: 105%;
+  object-fit: cover;
+}
+.diet-img-button{
+  width: 150px;
+  height: 200px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.diet-img-button:hover{
+  opacity: .7;
+}
+.diet-img-button:focus {
+  border:3px solid #F2CB05;
+}
+.diet-img-button:active {
+  border:3px solid #F2CB05;
+}
+.diet-img-button p{
+  position: absolute;
+  margin: -50px 0 0 20px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  z-index: 3;
+}
+.search-button {
+  width: 40%;
+  border-radius: 1rem;
+  background-color: #F2CB05;
+}
+.search-button:hover{
+  background-color: #F2E705;
+}
+
+.diet-img-button::before {
+  content: "";
+  position: absolute;
+  width: 150px;  
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Adjust the gradient colors and transparency as needed */
+  z-index: 1; 
+  border-radius: 8px;
+  
+}
+.more-button{
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}
+@media only screen and (min-width: 700px) and (max-width: 1025px){
+  .hero-title{
+    font-size: 20px;
+    margin-top: -120px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+  }
+  .search-section{
+    width: 60%;
+  }
+  .search-box{
+    width: 75%;
+  }
+  .search-header{
+    height: 180px;
+    width: 100vw;
+    overflow:hidden;
+    object-fit: cover;
+  }
+  .diet-box{
+    width: 100%;
+  }
+  .diet-img-button{
+    width: 160px;
+    height: 130px;
+    margin-bottom: 12px;
+  }
+  .diet-img-button::before{
+    height: 130px;
+    width: 160px;
+  }
+  .diet-img{
+    width: 100%;
+  }
+
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 699px){
+  .search-section{
+    width: 100%;
+  }
+  .search-box{
+    width: 70%;
+  }
+  .title-one  {
+    margin-top: 14px
+  } 
+  .diet-img-button{
+    width: 160px;
+    height: 90px;
+    margin-bottom: 12px;
+  }
+  .diet-img-button::before{
+    height: 90px;
+    width: 160px;
+  }
+  .diet-img{
+    width: 100%;
+  }
+  .search-button {
+    width: 100%;
+}
 }

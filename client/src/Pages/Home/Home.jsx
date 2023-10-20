@@ -1,12 +1,12 @@
-
-
-import AutosuggestInput from "./SearchInput"
+import SearchHero from "./SearchHero"
+import SearchInput from "./SearchInput"
 
 const Home = () => {
+ 
   return (
-    <div className="mobile">
-
-        <AutosuggestInput />
+    <div>
+       <SearchHero />
+       <SearchInput />
     </div>
   )
 }

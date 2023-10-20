@@ -1,0 +1,29 @@
+.header-backgound{
+    width: 100vw;
+    display: flex;
+    padding: 10px  60px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.logo{
+    width: 110px;
+}
+.login-button{
+    background-color: transparent;
+    border: 1px solid #F2CB05;
+    font-weight: 700;
+    height: 40px;
+}
+.login-button:hover{
+    background-color: #F2E705;
+    border: none;
+}
+
+
+
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .header-backgound{
+        padding: 10px 30px;
+    }
+}

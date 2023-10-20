@@ -1,17 +1,16 @@
 {
-    "diets": {
-        "types": [
-            "vegan",
-            "vegetarian",
-            "glutenfree",
-            "dairyFree",
-            "cheap",
-            "lowFodmap",
-            "veryPopular",
-            "sustainable",
-            "none"
-        ]
-    },
+    "diets": [
+          {"types": "vegan", "title":"Vegan","img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":  "vegetarian", "title":"Vegetarian", "img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":  "glutenfree","title": "Gluten free", "img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":  "dairyFree", "title": "Dairy free","img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":   "cheap", "title": "Cheap","img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":   "lowFodmap","title": "Low fodmap","img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":   "veryPopular", "title": "Very popular","img":"/src/assets/img/vegetarian.jpeg"},
+          { "types":  "sustainable", "title": "Sustainable", "img":"/src/assets/img/vegetarian.jpeg"}
+            
+        ],
+    
     "lists": {
         "vegan": [
             "Tofu",
