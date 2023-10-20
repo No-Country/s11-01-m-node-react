@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import "./home.css";
 import { inputIngredients } from "../../store/actions/IngredientsAction";
 import { Icon } from '@iconify/react';
-import SearchHeader from '../../assets/img/SearchHeader.png'
-import { isMobileOnly } from "react-device-detect";
+import SelectDiet from "./SelectDiet";
+
 
 
 const SearchInput = () => {
@@ -79,8 +79,6 @@ const SearchInput = () => {
 
   return (
     <>
-  {isMobileOnly ? null :  <img src={SearchHeader} className="search-header" />}
-  
     <div className="background">     
       <h4 className="title-one">Find perfect recipes</h4>
       <div className="form-box">
@@ -115,20 +113,7 @@ const SearchInput = () => {
         )}
       </div>
       </div>
-     
-      <div className="diets">
-        <p>Select the type of diet you prefer</p>
-        <div className="diet-box">
-          {dietTexts.diets.map((type, index) =>
-          <button key={index} className="diet-img-button" onClick={() => handleDiet(type.types)}>
-            <img src={type.img} alt={type.types} className="diet-img"/>
-            <p>
-              {type.title}
-            </p>
-            </button>
-          )}
-        </div>
-      </div>
+      <SelectDiet handleDiet={handleDiet}/>
       <button className="search-button" type="submit" onClick={(e)=>sendIngredients(e)}>
         Search Recipies
       </button>

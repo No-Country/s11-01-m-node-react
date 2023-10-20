@@ -1,7 +1,7 @@
 
 .background {
   width: 100vw;
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
 }
 .title-one {
@@ -9,6 +9,14 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 28px;
+}
+.hero-title{
+  font-weight: 700;
+  font-size: 24px;
+  position: relative;
+  margin-left: 60px;
+  margin-top: -140px;
+  margin-bottom: 50px;
 }
 .form-box{
   min-height: 100px;
@@ -139,6 +147,9 @@
   border-radius: 1rem;
   background-color: #F2CB05;
 }
+.search-button:focus{
+  outline-color: #F2CB05;
+}
 .diet-img-button::before {
   content: "";
   position: absolute;
@@ -148,6 +159,12 @@
   z-index: 1; 
 }
 @media only screen and (min-width: 700px) and (max-width: 1025px){
+  .hero-title{
+    font-size: 20px;
+    margin-top: -120px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+  }
   .search-section{
     width: 50%;
   }
@@ -158,16 +175,16 @@
     object-fit: cover;
   }
   .diet-box{
-    width: 80%;
+    width: 100%;
   }
   .diet-img-button{
-    width: 180px;
+    width: 160px;
     height: 130px;
     margin-bottom: 12px;
   }
   .diet-img-button::before{
     height: 130px;
-    width: 180px;
+    width: 160px;
   }
   .diet-img{
     width: 100%;
@@ -186,13 +203,13 @@
     margin-top: 14px
   } 
   .diet-img-button{
-    width: 170px;
+    width: 160px;
     height: 90px;
     margin-bottom: 12px;
   }
   .diet-img-button::before{
     height: 90px;
-    width: 170px;
+    width: 160px;
   }
   .diet-img{
     width: 100%;
