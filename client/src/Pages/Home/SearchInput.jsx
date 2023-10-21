@@ -1,21 +1,17 @@
-import dietTexts from "../../assets/Texts/diets.json";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import "./home.css";
-import { inputIngredients } from "../../store/actions/IngredientsAction";
 import { Icon } from '@iconify/react';
 import SelectDiet from "./SelectDiet";
-import {isMobileOnly } from "react-device-detect"
-import SelectDietMobile from "./SelectDietMobile";
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 
-const SearchInput = () => {
-  const [searchInput, setSearchInput] = useState("");
+const SearchInput = ({handleSubmit, handleChange, searchInput, selectedIngredients, handleIngredientRemove, handleDiet, sendIngredients, error}) => {
+ /*  const [searchInput, setSearchInput] = useState("");
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [dietTypeSelected, setDietTypeSelected] = useState("");
   const [error, setError] =useState("")
+  const [showRecipies, setShowRecipes]= useState(false)
 
   const dispatch = useDispatch()
   const getState = useSelector((state) => state.ingredients)
@@ -74,9 +70,10 @@ const SearchInput = () => {
       ingredientSelected: selectedIngredients,
       dietTypeSelected: dietTypeSelected
     };
+    setShowRecipes(true)
     dispatch(inputIngredients(searchData))
     getReceta()
-  };
+  }; */
 
 
   return (
@@ -121,16 +118,26 @@ const SearchInput = () => {
            <p>{error}</p>
            </div>}
       </div>
-      {isMobileOnly ?
-      <SelectDietMobile handleDiet={handleDiet} /> :
-      <SelectDiet handleDiet={handleDiet}/>}
+     
+      <SelectDiet handleDiet={handleDiet}/>
       <button className="search-button" type="submit" onClick={(e)=>sendIngredients(e)}>
         Search Recipies
       </button>
-      <Link to='/results'>Go to Recipies</Link>
     </div>
     </>
   );
 };
+SearchInput.propTypes = {
+  handleDiet: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleIngredientRemove: PropTypes.func.isRequired,
+  error:PropTypes.string,
+  searchInput: PropTypes.string,
+  selectedIngredients: PropTypes.array,
+  sendIngredients: PropTypes.func.isRequired
 
+};
 export default SearchInput;
+
+  
