@@ -1,7 +1,7 @@
 import axios from "axios";
 import { v4 as uuid } from 'uuid';
 
-async function getRecipeDetails(recipeId: string): Promise<void> {
+export async function getRecipeDetails(recipeId: string): Promise<void> {
 
     try {
 
