@@ -1,13 +1,13 @@
 import axios from "axios";
-import { v4 as uuid } from 'uuid';
+
 
 export async function getRecipeDetails(recipeId: string): Promise<void> {
 
     try {
 
-        const apiKey = '7a6af1cfce6c41f5a67d6147b8ce6160';
+
         const response = await
-            axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${apiKey}`);
+            axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${process.env.apiKey}`);
 
         const recipeDetails = response.data;
 
@@ -36,5 +36,3 @@ export async function getRecipeDetails(recipeId: string): Promise<void> {
     }
 }
 
-const recipeId = uuid();
-getRecipeDetails(recipeId);
