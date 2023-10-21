@@ -1,16 +1,22 @@
 import {isMobileOnly} from 'react-device-detect'
-import SearchHeader from '../../assets/img/SearchHeader.png'
+import PropTypes from 'prop-types';
 
-const SearchHero = () => {
+const SearchHero = ({SearchHeader, text}) => {
   return (
     <div> {isMobileOnly ? (null) :  
     (
-    <div>
+    <div className='hero'>
         <img src={SearchHeader} className="search-header" />
-        <p className='hero-title'>Have 3 ingredients at home?<br></br> We will suggest what to cook!</p>
+         <p className='hero-title' dangerouslySetInnerHTML={{ __html: text}}></p>
+      
     </div>
-    )}</div>
+    )}
+    </div>
   )
 }
-
+SearchHero.propTypes={
+  SearchHeader:PropTypes.string,
+  text: PropTypes.string,
+ 
+}
 export default SearchHero

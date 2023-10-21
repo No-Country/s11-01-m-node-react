@@ -1,26 +1,23 @@
 import { Link } from "react-router-dom";
 import "./landing.css";
-import BigImg from "../../assets/img/bigbackground.png";
-import MobileImg from "../../assets/img/background.png";
+import BigImg from "../../assets/img/bigBook.png";
+import MobileImg from "../../assets/img/Book.png";
 import { isMobileOnly } from "react-device-detect";
-import Logo from "../../assets/img/logo3.png";
+import Logo from "../../assets/img/logoW.png";
 
 const Landing = () => {
   return (
     <div className="landing-background">
       <div>
         {isMobileOnly
-          ? (<><img src={Logo} className="logo-landing" alt="" />
+          ? (<><div className="logo-back"><img src={Logo} className="logo-landing" alt="" /></div>
           <img src={MobileImg} className="big-img"/>
             </>)
           : (<img src={BigImg} className="big-img" alt="" />)}
         <div className="title-box">
-          <h5>
-            Got three ingredients on hand? <br /> We will recommend a dish to
-            make!
-          </h5>
+      
           <Link to="/home">
-            <button className="button">Search recipies</button>
+            <button className="button">SEARCH RECIPES</button>
           </Link>
         </div>
       </div>
