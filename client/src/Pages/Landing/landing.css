@@ -1,0 +1,51 @@
+.landing-background{
+    width: 100vw;
+    height: 100vh;
+}
+.big-img{
+    width: 100vw;
+}
+
+.title-box{
+    position: absolute;
+    margin-top: -140px;
+    width: 100vw;
+    text-align: center;
+}
+.button{
+    background-color: #F2CB05;
+    padding: 14px 90px; 
+    border-radius: 16px;
+}
+.button:hover{
+    border: none;
+    background-color: #F2E705;
+}
+@media only screen and (min-width: 700px) and (max-width: 1025px){
+    .title-box{      
+        margin-top: -100px;
+    }
+    .button{
+        padding: 12px 60px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .title-box{
+        text-align: center;
+        margin: -150px auto 0px;
+        width: 100%;
+    }
+    .logo-landing{
+       position: absolute;
+        margin: 2% 10%;
+        width: 80%;
+    }
+    .logo-back{
+        width: 100vw;
+        height: 130px;
+        background: rgba(0, 0, 0, 0.20);
+        position: absolute;
+        z-index: 2;
+        margin-top: 120px;
+    }
+}
