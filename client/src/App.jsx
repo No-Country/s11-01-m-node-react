@@ -4,18 +4,19 @@ import Home from "./Pages/Home/Home";
 import Landing from "./Pages/Landing/Landing";
 import Header from "./assets/Header/Header";
 import Recipies from "./Pages/Home/Recipies";
+import Login from "./Pages/Login/Login";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <Header />
+        <Header />
         <Routes>
-        <Route exact path="/results" element={<Recipies />} />
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/login" element={''} />
-        <Route exact path="/" element={<Landing />} />
-       
+        <Route exact path="/login" element={<Login />} />
+          <Route exact path="/results" element={<Recipies />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/login" element={""} />
+          <Route exact path="/" element={<Landing />} />
         </Routes>
       </BrowserRouter>
     </>

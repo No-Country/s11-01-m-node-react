@@ -1,9 +1,11 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-import { inputIngredients } from "../actions/IngredientsAction";
+import ingredientReducer from "../reducers/ingredientsReducer";
+import loginReducer from "../reducers/userReducer";
 
 const rootReducer = combineReducers({
-  ingredients: inputIngredients,
+  ingredients: ingredientReducer,
+  login: loginReducer
 });
 
 export default rootReducer;
