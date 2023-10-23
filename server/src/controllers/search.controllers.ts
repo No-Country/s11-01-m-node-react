@@ -12,9 +12,7 @@ export const fetchRecipesFromAPI = async (
   dietType: string
 ) => {
   try {
-    console.log(ingredients);
     const formattedIngredients = ingredients;
-    console.log(formattedIngredients);
 
     const URI = `${BASE_URL}?apiKey=${apikey}&ingredients=${formattedIngredients}&diet=${dietType}`;
 
@@ -36,8 +34,10 @@ export const searchController = async (
     if (!ingredients || ingredients.length === 0) {
       return res.status(400).send({ error: "Ingredients are required." });
     }
+    
     const results = await findByIngredients(ingredients, "vegan"); // vacio
     const recipeDetails = await getRecipeDetails();
+
 
     //falta que devuelta las recetas
 
