@@ -1,7 +1,8 @@
-import { Request, Response, NextFunction } from "express";
+import axios from "axios";
+import { NextFunction, Request, Response } from "express";
 import { findByIngredients } from "../services/search.services";
 import { AppError } from "../utils/app.error";
-import axios from "axios";
+import { getRecipeDetails } from "./recipes.controllers";
 
 const BASE_URL = "https://api.spoonacular.com/recipes/findByIngredients";
 const apikey = "7c0de099cbec4506b68ca55c2a6775eb";
@@ -33,11 +34,14 @@ export const searchController = async (
     if (!ingredients || ingredients.length === 0) {
       return res.status(400).send({ error: "Ingredients are required." });
     }
-    const results = await findByIngredients(ingredients, "vegan");
+    
+    const results = await findByIngredients(ingredients, "vegan"); // vacio
+    const recipeDetails = await getRecipeDetails();
+
 
     //falta que devuelta las recetas
 
-    return res.send(results);
+    return res.send({ results, recipeDetails });
   } catch (error) {
     if (!(error instanceof AppError)) {
       return res.status(500).json(error);
