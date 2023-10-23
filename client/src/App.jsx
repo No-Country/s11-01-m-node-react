@@ -5,6 +5,7 @@ import Landing from "./Pages/Landing/Landing";
 import Header from "./assets/Header/Header";
 import Recipies from "./Pages/Home/Recipies";
 import Login from "./Pages/Login/Login";
+import Footer from "./assets/Footer/Footer";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
         <Route exact path="/login" element={<Login />} />
           <Route exact path="/results" element={<Recipies />} />
           <Route exact path="/home" element={<Home />} />
-          <Route exact path="/login" element={""} />
           <Route exact path="/" element={<Landing />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
