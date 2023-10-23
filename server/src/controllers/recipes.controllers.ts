@@ -1,38 +1,52 @@
 import axios from "axios";
 
 
-export async function getRecipeDetails(recipeId: string): Promise<void> {
+export async function getRecipeDetails(): Promise<any> {
 
     try {
 
-
         const response = await
-            axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${process.env.apiKey}`);
+            axios.get(`https://api.spoonacular.com/recipes/642468/information?includeNutrition=false&apiKey=${process.env.apiKey}`
+            );
 
         const recipeDetails = response.data;
 
-        console.log('Title:', recipeDetails.title);
-        console.log('Image:', recipeDetails.image);
-        console.log('Ready in Minutes:', recipeDetails.readyInMinutes);
-        console.log('Summary:', recipeDetails.summary);
-        console.log('Instructions:', recipeDetails.instructions);
+        const title = recipeDetails.title;
+        const Image = recipeDetails.image;
+        const ReadyinMinutes = recipeDetails.readyInMinutes;
+        const Summary = recipeDetails.summary;
+        const Instructions = recipeDetails.instructions;
 
-        console.log('Ingredients:');
 
-        recipeDetails.extendedIngredients.forEach((ingredient: any) => {
-            console.log(`${ingredient.name}: ${ingredient.amount} ${ingredient.unit}`);
+        const ingredients = recipeDetails.extendedIngredients.map((ingredient: any) => {
+            name: ingredient.name;
+            amount: ingredient.amount;
+            unit: ingredient.unit;
         });
 
-        console.log('Equipment:');
+        //Obtener detalles del equipo en formato JSON
 
-        recipeDetails.analyzedInstructions.forEach((instruction: any) => {
-            instruction.step.equipment.forEach((equipment: any) => {
-                console.log(equipment.name);
-            });
+        const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/642468/equipmentWidget.json?apiKey=${process.env.apiKey}`
+        );
+
+        const equipmentData = equipmentResponse.data;
+
+        const equipment = equipmentData.equipment.map((equipment: any) => {
+            name: equipment.name;
+            image: equipment.image
         });
+        return {
+            title,
+            Image,
+            ReadyinMinutes,
+            Summary,
+            Instructions,
+            ingredients,
+            equipment
+        }
 
     } catch (error) {
         console.error('Error while getting the recipe details', error);
+        return null;
     }
 }
-
