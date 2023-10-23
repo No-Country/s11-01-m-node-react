@@ -77,12 +77,18 @@ const Home = () => {
     dispatch(inputIngredients(searchData));
     getReceta();
   };
-
+  const restartSearch=(e)=>{
+    e.preventDefault();
+    setShowRecipes(false)
+    setSelectedIngredients([])
+    setDietTypeSelected("")
+  }
+console.log (selectedIngredients, dietTypeSelected )
   return (
     <div>
       <SearchHero SearchHeader={showRecipies=== true ? heroResult : SearchHeader} text={showRecipies=== true ? dietTexts.resultTitle : dietTexts.searchTitle}/>
       {showRecipies === true ? 
-      <Recipies selectedIngredients={selectedIngredients} dietTypeSelected={dietTypeSelected} /> :
+      <Recipies selectedIngredients={selectedIngredients} dietTypeSelected={dietTypeSelected} restartSearch={restartSearch} /> :
       <SearchInput
         handleSubmit={handleSubmit}
         handleChange={handleChange}

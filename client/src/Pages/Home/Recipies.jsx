@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import RecipiesSection from './RecipiesSection';
 
 
-const Recipies = ({selectedIngredients, dietTypeSelected}) => {
+const Recipies = ({selectedIngredients, dietTypeSelected, restartSearch}) => {
 
   return (
     <>
@@ -18,7 +18,7 @@ const Recipies = ({selectedIngredients, dietTypeSelected}) => {
         <p className={dietTypeSelected === '' ? "display-none" : 'subtitle'}>Diet type:</p>
         <p>{dietTypeSelected}</p>
         </div>
-        <button className='new-button'>New Search</button>
+        <button className='new-button' onClick={(e)=>restartSearch(e)}>New Search</button>
         </div>
     </div>
     <RecipiesSection />
@@ -27,6 +27,7 @@ const Recipies = ({selectedIngredients, dietTypeSelected}) => {
 }
 Recipies.propTypes={
     selectedIngredients: PropTypes.array,
-    dietTypeSelected: PropTypes.string
+    dietTypeSelected: PropTypes.string,
+    restartSearch: PropTypes.func.isRequired
 }
 export default Recipies
