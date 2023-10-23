@@ -1,9 +1,11 @@
 .landing-background{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
 }
 .big-img{
     width: 100vw;
+    height: 90vh;
+    object-fit: cover;
 }
 
 .title-box{
@@ -23,13 +25,19 @@
 }
 @media only screen and (min-width: 700px) and (max-width: 1025px){
     .title-box{      
-        margin-top: -100px;
+        margin-top: -150px;
     }
     .button{
         padding: 12px 60px;
     }
 }
 @media only screen and (min-width: 300px) and (max-width: 699px){
+    .landing-background{
+        height: 100vh;
+    }
+    .big-img{
+        height: 100vh;
+    }
     .title-box{
         text-align: center;
         margin: -150px auto 0px;
