@@ -12,9 +12,7 @@ export const fetchRecipesFromAPI = async (
   dietType: string
 ) => {
   try {
-    console.log(ingredients);
     const formattedIngredients = ingredients;
-    console.log(formattedIngredients);
 
     const URI = `${BASE_URL}?apiKey=${apikey}&ingredients=${formattedIngredients}&diet=${dietType}`;
 
