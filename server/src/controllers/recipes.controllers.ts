@@ -18,11 +18,11 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 		const Instructions = recipeDetails.instructions;
 
 
-		const ingredients = recipeDetails.extendedIngredients.map((ingredient: any) => {
-			name: ingredient.name;
-			amount: ingredient.amount;
-			unit: ingredient.unit;
-		});
+		const ingredients = recipeDetails.extendedIngredients.map((ingredient: any) => ({
+			name: ingredient.name,
+			amount: ingredient.amount,
+			unit: ingredient.unit
+		}));
 
 		//Obtener detalles del equipo en formato JSON
 
@@ -31,10 +31,10 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 
 		const equipmentData = equipmentResponse.data;
 
-		const equipment = equipmentData.equipment.map((equipment: any) => {
-			name: equipment.name;
+		const equipment = equipmentData.equipment.map((equipment: any) => ({
+			name: equipment.name,
 			image: equipment.image
-		});
+		}));
 		return {
 			title,
 			Image,
