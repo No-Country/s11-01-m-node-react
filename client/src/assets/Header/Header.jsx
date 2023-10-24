@@ -7,15 +7,16 @@ import { isMobileOnly } from "react-device-detect";
 const Header = () => {
   const location= useLocation()
   return (
-    location.pathname=== '/' && isMobileOnly ? (null):(
+    location.pathname=== '/' || location.pathname === '/login' && isMobileOnly ? (null):(
     <div className="header-backgound">
       <Link to="/">
         <img src={Logo} className="logo" alt="" />
       </Link>
-      <Link>
-      {location.pathname === '/'? <button className="login-button">Login</button>:
-        <Icon icon="mdi:account-outline" className="icon" />}
-      </Link>
+     
+      {location.pathname === '/'? 
+       <Link to='/login' ><button className="login-button">Login</button></Link>:
+       <Link> <Icon icon="mdi:account-outline" className="icon" /> </Link>}
+     
     </div>
     )
   );

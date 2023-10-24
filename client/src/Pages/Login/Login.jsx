@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { loginUser } from "../../store/actions/loginUserAction";
 import { useDispatch } from "react-redux";
+import Logo from "../../assets/img/logo3.png";
+import { Link } from "react-router-dom";
+import { isMobileOnly } from "react-device-detect";
+import './login.css'
 
 function Login() {
   
@@ -30,9 +34,19 @@ function Login() {
   };
 
   return (
+    <>
+    <div className="login-background">
+      {isMobileOnly?  
+      <Link to="/">
+        <img src={Logo} className="logo-login" alt="" />
+      </Link>: null}
+      <div className="input-box">
+    <h2>Log in</h2>
     <form onSubmit={handleOnsubmit}>
-      <label>email</label>
+    <div className="input-single">
+      <label className="label">Email</label>
       <input
+      className="inputs"
         onChange={handleOnChange}
         type="email"
         name="email"
@@ -40,18 +54,29 @@ function Login() {
         placeholder="usename@email.com"
         required
       />
-
-      <label>Password</label>
+      </div>
+      <div className="input-single">
+      <label className="label">Password</label>
       <input 
+      className="inputs"
         onChange={handleOnChange}
         value={state.password} 
         name="password"
         type="password"
+        placeholder="type your password"
         required
      />
+     <p className="input-extra-text">Forgot your password?</p>
+     </div>
 
-      <input type="submit" />
+      <button type="submit" className="login-button">LOG IN</button>
+      
     </form>
+    
+    </div>
+    <p className="input-extra-text">Don&apos;t have an account?<span className="span"> Sign up</span></p>
+    </div>
+    </>
   );
 }
 
