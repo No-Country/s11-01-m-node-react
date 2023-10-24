@@ -1,28 +1,9 @@
-import axios from "axios";
 import { NextFunction, Request, Response } from "express";
 import { findByIngredients } from "../services/search.services";
 import { AppError } from "../utils/app.error";
 import { getRecipeDetails } from "./recipes.controllers";
 
-const BASE_URL = "https://api.spoonacular.com/recipes/findByIngredients";
-const apikey = "7c0de099cbec4506b68ca55c2a6775eb";
-// Conecta con la api y devuelve una receta formateando los ingredientes y el tipo de  dieta. Devuelve un objeto con los datos de la receta
-export const fetchRecipesFromAPI = async (
-  ingredients: string[],
-  dietType: string
-) => {
-  try {
-    const formattedIngredients = ingredients;
 
-    const URI = `${BASE_URL}?apiKey=${apikey}&ingredients=${formattedIngredients}&diet=${dietType}`;
-
-    const response = await axios.get(URI);
-
-    return response.data;
-  } catch (error) {
-    return error;
-  }
-};
 // Captura los datos que envía el front
 export const searchController = async (
   req: Request,
@@ -36,7 +17,9 @@ export const searchController = async (
     }
     
     const results = await findByIngredients(ingredients, "vegan"); // vacio
-    const recipeDetails = await getRecipeDetails();
+    const recipeDetails = await Promise.all(results.map(async (recipe: any) => ({
+      details: await getRecipeDetails(recipe.id)
+    })))
 
 
     //falta que devuelta las recetas
