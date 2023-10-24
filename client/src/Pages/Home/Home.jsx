@@ -4,7 +4,7 @@ import dietTexts from "../../assets/Texts/diets.json";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./home.css";
-import { inputIngredients } from "../../store/actions/IngredientsAction";
+import { inputIngredients } from '../../store/actions/ingredientsAction.js'
 import Recipies from "./Recipies";
 import SearchHeader from '../../assets/img/SearchHeader.png'
 import heroResult from '../../assets/img/heroResult.png'
