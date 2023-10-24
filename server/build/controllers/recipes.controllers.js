@@ -24,18 +24,18 @@ function getRecipeDetails(recipeId) {
             const ReadyinMinutes = recipeDetails.readyInMinutes;
             const Summary = recipeDetails.summary;
             const Instructions = recipeDetails.instructions;
-            const ingredients = recipeDetails.extendedIngredients.map((ingredient) => {
-                name: ingredient.name;
-                amount: ingredient.amount;
-                unit: ingredient.unit;
-            });
+            const ingredients = recipeDetails.extendedIngredients.map((ingredient) => ({
+                name: ingredient.name,
+                amount: ingredient.amount,
+                unit: ingredient.unit
+            }));
             //Obtener detalles del equipo en formato JSON
             const equipmentResponse = yield axios_1.default.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${process.env.apiKey}`);
             const equipmentData = equipmentResponse.data;
-            const equipment = equipmentData.equipment.map((equipment) => {
-                name: equipment.name;
-                image: equipment.image;
-            });
+            const equipment = equipmentData.equipment.map((equipment) => ({
+                name: equipment.name,
+                image: equipment.image
+            }));
             return {
                 title,
                 Image,
