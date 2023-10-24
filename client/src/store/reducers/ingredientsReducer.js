@@ -6,7 +6,7 @@ const initialState = {
   ingredients: [],
 };
 
-const reducer = createReducer(initialState, (builder) => {
+const ingredientReducer = createReducer(initialState, (builder) => {
   
   builder.addCase(INPUT_INGREDIENTS, (state, action) => {
     state = action.payload
@@ -14,4 +14,5 @@ const reducer = createReducer(initialState, (builder) => {
   
 });
 
-export default reducer;
+export default ingredientReducer
+
