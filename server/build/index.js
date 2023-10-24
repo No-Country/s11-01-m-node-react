@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const http_1 = __importDefault(require("http"));
 const app_1 = __importDefault(require("./app"));
-const PORT = 8000;
+const PORT = 8001;
 const server = http_1.default.createServer(app_1.default);
 const startServer = () => {
     server.listen(PORT, () => {
