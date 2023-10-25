@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import './card.css'
 
 const data= {
-    img: "/src/assets/img/Cardimg.png",
+    img: "https://res.cloudinary.com/danb0chax/image/upload/v1698244998/cookmatch/CardImg_rd7bgx.png",
     name: "Pokebowl",
     dietType: "Glutenfree",
     time: "15-20min"
