@@ -12,35 +12,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getIngredients = exports.fetchRecipesFromAPI = void 0;
-const axios_1 = __importDefault(require("axios"));
-const AppError_1 = __importDefault(require("../utils/AppError"));
-const errorMsgs_1 = __importDefault(require("../constants/errorMsgs"));
+exports.getIngredients = void 0;
+const fetchRecipes_1 = __importDefault(require("../utils/fetchRecipes"));
+const errorMsgs_1 = require("../constants/errorMsgs");
 const httpCodes_1 = require("../constants/httpCodes");
-const BASE_URL = "https://api.spoonacular.com/recipes/findByIngredients";
-const API_KEY = process.env.API_KEY;
-const fetchRecipesFromAPI = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
-    const formattedIngredients = ingredients.join(",+").replace(/ /g, "%20");
-    const URI = `${BASE_URL}?apiKey=${API_KEY}&ingredients=${formattedIngredients}&diet=${dietType}`;
-    const response = yield axios_1.default.get(URI);
-    return response.data;
-});
-exports.fetchRecipesFromAPI = fetchRecipesFromAPI;
+const app_error_1 = require("../utils/app.error");
+// Capturar los datos que envia el front
 const getIngredients = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { ingredients, dietTypeSelected } = req.body;
-        const data = yield (0, exports.fetchRecipesFromAPI)(ingredients, dietTypeSelected);
-        res.status(httpCodes_1.HTTPCODES.OK).json({
+        const data = yield (0, fetchRecipes_1.default)(ingredients, dietTypeSelected);
+        return res.status(httpCodes_1.HTTPCODES.OK).json({
             status: "success",
             data,
         });
     }
     catch (error) {
-        if (!(error instanceof AppError_1.default)) {
-            next(new AppError_1.default(errorMsgs_1.default.INTERNAL_SERVER_ERROR, httpCodes_1.HTTPCODES.BAD_REQUEST));
+        if (!(error instanceof app_error_1.AppError)) {
+            return next(new app_error_1.AppError(errorMsgs_1.ERROR_MSGS.SERVER_ERROR, httpCodes_1.HTTPCODES.BAD_REQUEST));
         }
         else {
-            next(error);
+            return next(error);
         }
     }
 });

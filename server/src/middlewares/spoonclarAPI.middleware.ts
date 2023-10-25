@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { fetchRecipesFromAPI } from "../controllers/search.controllers";
+import fetchRecipes from "../utils/fetchRecipes";
 import { ERROR_MSGS } from "../constants/errorMsgs";
 import { HTTPCODES } from "../constants/httpCodes";
 import { AppError } from "../utils/app.error";
@@ -12,7 +12,7 @@ export const getIngredients = async (
 ) => {
   try {
     const { ingredients, dietTypeSelected } = req.body;
-    const data = await fetchRecipesFromAPI(ingredients, dietTypeSelected);
+    const data = await fetchRecipes(ingredients, dietTypeSelected);
 
     return res.status(HTTPCODES.OK).json({
       status: "success",

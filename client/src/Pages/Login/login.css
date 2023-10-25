@@ -1,0 +1,62 @@
+.login-background{
+    padding: 2.3rem 2rem;
+    text-align: center;
+    height: 100vh;
+}
+.logo-login{
+    width: 60%;
+}
+.input-box{
+    width: 40%;
+    margin: 0 auto;
+    text-align: left;
+
+}
+.input-box h2{
+    font-weight: 500;
+    line-height: 36px;
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+.input-single{
+    margin-bottom: 50px;
+}
+.label{
+ font-size: 18px;
+ font-weight: 600;
+}
+.inputs{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 16px ;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+}
+.input-extra-text{
+    font-size: 14px;
+    color: #374151;
+}
+.login-button{
+    background-color: #F2CB05;
+    padding: 8px 0px; 
+    border-radius: 16px;
+    width: 100%;
+    margin-top: 130px;
+}
+.span{
+    color: #F2CB05 ;
+}
+    
+@media only screen and (min-width: 700px) and (max-width: 1025px){
+    .input-box{
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .input-box{
+        width: 100%;
+        padding-top: 30px;
+    }
+}

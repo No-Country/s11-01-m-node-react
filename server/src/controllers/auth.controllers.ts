@@ -10,7 +10,7 @@ import { comparePassword } from "../utils/bcrypt";
 export const register = async (req: Request, res: Response): Promise<Response> => {
 	try {
 		const { email, password } = req.body;
-		
+
 		if (!email || !password) {
 			res.status(400);
 			throw {
@@ -33,7 +33,7 @@ export const register = async (req: Request, res: Response): Promise<Response> =
 			username: ""
 		});
 		const accessToken = generateToken(user);
-		
+
 		return res.status(200).json({
 			user,
 			accessToken
@@ -48,7 +48,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 		const { email, password } = req.body
 		if (!email || !password) {
 			res.status(400)
-			throw({
+			throw ({
 				code: 400,
 				message: 'You must provde an email or password',
 				data: null
@@ -58,7 +58,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 		const user = await getUserByEmail(email)
 		if (!user) {
 			res.status(400)
-			throw({
+			throw ({
 				code: 400,
 				message: 'Invalid email',
 				data: null
@@ -68,7 +68,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 		const verifyPassword = await comparePassword(password, user.password)
 		if (!verifyPassword) {
 			res.status(401)
-			throw({
+			throw ({
 				code: 401,
 				message: 'Invalid password',
 				data: null
@@ -100,11 +100,11 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 }
 
 export const logout = (_req: Request, res: Response): Response => {
-  return res.status(200).clearCookie('Authorization').json(
-    {
+	return res.status(200).clearCookie('Authorization').json(
+		{
 			code: 200,
-      message: 'Logged out',
+			message: 'Logged out',
 			data: null
-    }
-  )
+		}
+	)
 }

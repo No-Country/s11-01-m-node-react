@@ -1,4 +1,4 @@
-import { fetchRecipesFromAPI } from "../controllers/search.controllers";
+import fetchRecipesFromAPI from "../utils/fetchRecipes";
 
 // Función para obtener las recetas
 

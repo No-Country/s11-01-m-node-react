@@ -8,17 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findByIngredients = exports.getRecipes = void 0;
-const spoonclarAPI_middleware_1 = require("../middlewares/spoonclarAPI.middleware");
+const fetchRecipes_1 = __importDefault(require("../utils/fetchRecipes"));
 // Función para obtener las recetas
 const getRecipes = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield (0, spoonclarAPI_middleware_1.fetchRecipesFromAPI)(ingredients, dietType);
+    const res = yield (0, fetchRecipes_1.default)(ingredients, dietType);
     return res;
 });
 exports.getRecipes = getRecipes;
 const findByIngredients = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield (0, spoonclarAPI_middleware_1.fetchRecipesFromAPI)(ingredients, dietType);
+    const res = yield (0, fetchRecipes_1.default)(ingredients, dietType); // entra a la funcion de fetchRecipesFromAPI
     return res;
 });
 exports.findByIngredients = findByIngredients;

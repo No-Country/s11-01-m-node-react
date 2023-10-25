@@ -1,0 +1,21 @@
+.footer-background{
+    background-color: #F6E382;
+    ;
+    height: 16rem;
+    text-align: center;
+}
+.footer-background img{
+   height: 4rem;
+    margin-top: 3rem;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .footer-background{
+        height: 14rem;
+    }
+    .footer-background img{
+        height: 2rem;
+        margin-top: 2rem;
+    }
+}
