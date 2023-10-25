@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="S11 Nocountry" />
+  <img src="./.github/app.gif" alt="CookMatch s11-01-node-react" />
 
   &#xa0;
 
