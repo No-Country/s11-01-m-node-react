@@ -1,19 +1,17 @@
-const LOGIN = "LOGIN"
+const LOGIN = "LOGIN";
 
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: {}
+  email: "",
+  password: "",
 };
 
 const loginReducer = createReducer(initialState, (builder) => {
-  
-  builder.addCase(LOGIN, (state, action) => {
-    console.log(state, action)
-    state = action.payload
-    console.log(state, action)
-  });
-  
+  builder.addCase(LOGIN, (state, { payload: { email, password } }) => {
+      state.email = email;
+      state.password = password;
+    });
 });
 
 export default loginReducer;
