@@ -6,7 +6,7 @@
   <!-- <a href="https://s11nocountry.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">S11 Nocountry</h1>
+<h1 align="center">CookMatch s11-01-node-react</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/No-Country/s11-nocountry?color=56BEB8">
