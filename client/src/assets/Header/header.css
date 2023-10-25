@@ -10,18 +10,25 @@
 .logo{
     width: 110px;
 }
-.login-button{
-    background-color: transparent;
-    border: 1px solid #F2CB05;
+.logo-link{
+    flex-grow: 1;
+}
+.header-link{
+    font-size: 18px;
     font-weight: 700;
-    height: 40px;
+    text-decoration: none;
+    color: #000;
+    padding: 0 20px;
 }
-.login-button:hover{
-    background-color: #F2E705;
-    border: none;
+.header-link-special{
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    background-color: #F2CB05;
+    padding: 18px 27px 18px 27px;
+    border-radius: 16px;
 }
-
-
 
 @media only screen and (min-width: 300px) and (max-width: 699px){
     .header-backgound{
