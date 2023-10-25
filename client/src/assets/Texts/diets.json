@@ -1,14 +1,14 @@
 {
     "diets": [
-          {"types": "vegan", "title":"Vegan","img":"/src/assets/img/healthy.jpg"},
-          { "types":  "vegetarian", "title":"Vegetarian", "img":"/src/assets/img/healthy.jpg"},
-          { "types":  "glutenfree","title": "Gluten free", "img":"/src/assets/img/healthy.jpg"},
-          { "types":  "dairyFree", "title": "Dairy free","img":"/src/assets/img/healthy.jpg"},
+          {"types": "vegan", "title":"Vegan","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
+          { "types":  "vegetarian", "title":"Vegetarian", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
+          { "types":  "glutenfree","title": "Gluten free", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
+          { "types":  "dairyFree", "title": "Dairy free","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
          
-          { "types":   "lowFodmap","title": "Low fodmap","img":"/src/assets/img/lowFodmap.jpg"},
-          { "types":   "veryPopular", "title": "Very popular","img":"/src/assets/img/popular.jpg"},
-          { "types":  "sustainable", "title": "Sustainable", "img":"/src/assets/img/sustainable.jpg"},
-          { "types":  "veryHealthy", "title": "Very healthy", "img":"/src/assets/img/healthy.jpg"}
+          { "types":   "lowFodmap","title": "Low fodmap","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/lowFodmap_k8bxrr.jpg"},
+          { "types":   "veryPopular", "title": "Very popular","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/popular_nzqmdc.jpg"},
+          { "types":  "sustainable", "title": "Sustainable", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244974/cookmatch/sustainable_bpzjw8.jpg"},
+          { "types":  "veryHealthy", "title": "Very healthy", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"}
             
         ],
     "searchTitle": "Have 3 ingredients at home? <br> We will suggest what to cook!",
