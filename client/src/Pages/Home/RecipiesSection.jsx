@@ -1,16 +1,18 @@
-
+import Recipecard from "../../assets/Cards/Recipecard"
 const RecipiesSection = () => {
   return (
     <div className="recipies-box">
-        <h5>Title</h5>
+        <h3>We suggest these recipes</h3>
         <div className="card-section">
-            <p>Card</p>
-            <p>Card</p>
-            <p>Card</p>
-            <p>Card</p>
-            <p>Card</p>
-            <p>Card</p>
-            <p>Card</p>
+            <Recipecard />
+            <Recipecard />
+            <Recipecard />
+            <Recipecard />
+            <Recipecard />
+            <Recipecard />
+            <Recipecard />
+            <Recipecard />
+            
         </div>
     </div>
   )

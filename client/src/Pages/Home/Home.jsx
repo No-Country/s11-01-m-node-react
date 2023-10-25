@@ -1,4 +1,3 @@
-import SearchHero from "./SearchHero";
 import SearchInput from "./SearchInput";
 import dietTexts from "../../assets/Texts/diets.json";
 import { useState } from "react";
@@ -6,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "./home.css";
 import { inputIngredients } from '../../store/actions/ingredientsAction.js'
 import Recipies from "./Recipies";
-import SearchHeader from '../../assets/img/SearchHeader.png'
-import heroResult from '../../assets/img/heroResult.png'
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -86,7 +83,7 @@ const Home = () => {
 console.log (selectedIngredients, dietTypeSelected )
   return (
     <div>
-      <SearchHero SearchHeader={showRecipies=== true ? heroResult : SearchHeader} text={showRecipies=== true ? dietTexts.resultTitle : dietTexts.searchTitle}/>
+     {/*  <SearchHero SearchHeader={showRecipies=== true ? heroResult : SearchHeader} text={showRecipies=== true ? dietTexts.resultTitle : dietTexts.searchTitle}/> */}
       {showRecipies === true ? 
       <Recipies selectedIngredients={selectedIngredients} dietTypeSelected={dietTypeSelected} restartSearch={restartSearch} /> :
       <SearchInput
