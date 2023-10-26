@@ -54,6 +54,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 				data: null
 			})
 		}
+		let token
 		const user = await getUserByEmail(email)
 		if (!user) {
 			res.status(400)
@@ -74,7 +75,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 			})
 		}
 
-		const token = generateToken(user)
+		token = generateToken(user)
 		return res.status(200).cookie('Authorization',
 			token,
 			{
@@ -85,12 +86,9 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 					code: 200,
 					message: null,
 					data: {
-						user: {
-							id: user.id,
-							userId: user.userId,
-							email: user.email,
-							username: user.username
-						}
+						email,
+						user,
+						token
 					}
 				})
 	} catch (error) {
