@@ -88,8 +88,10 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 Made with :heart: by:
 PM: Emi Araujo
-Tester/QA: <a href="https://github.com/dextr0yer">Angelo Montero </a>
-UX/UI Designers: Micaela, Flavia
+Tester/QA: <a href="https://github.com/dextr0yer">Angelo Montero Osorio </a>
+UX/UI Designers:
+<a href="https://www.behance.net/samsomicaela?tracking_source=search_users|micaela%20samso"> Micaela</a>
+ , Flavia
 Frontend:
 <a href="https://github.com/Joseacode" target="_blank"> Jose Antonio Miró </a>
 <a href="https://github.com/AndyCambra" target="_blank">Andrea Marcela Cambra </a>
