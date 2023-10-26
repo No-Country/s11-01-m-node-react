@@ -10,3 +10,4 @@ export const loadData = createAsyncAction("LOAD_DATA", async (payload) => {
     payload: data,
   };
 });
+

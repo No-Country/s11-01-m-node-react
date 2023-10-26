@@ -8,8 +8,9 @@ const initialState = {
 
 const ingredientReducer = createReducer(initialState, (builder) => {
   
-  builder.addCase(INPUT_INGREDIENTS, (state, action) => {
-    state = action.payload
+  builder.addCase(INPUT_INGREDIENTS, (state, payload) => {
+    console.log("Desde Reducer", payload)
+    state = payload
   });
   
 });
