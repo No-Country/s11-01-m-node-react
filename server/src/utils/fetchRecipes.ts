@@ -13,8 +13,8 @@ const fetchRecipesFromAPI = async (
 		const response = await axios.get(URI);
 
 		return response.data;
-	} catch (error) {
-		return error;
+	} catch (error: any) {
+		return error.message;
 	}
 };
 

@@ -7,8 +7,7 @@ import { getRecipeDetails } from "./recipes.controllers";
 // Captura los datos que envía el front
 export const searchController = async (
   req: Request,
-  res: Response,
-  next: NextFunction
+  res: Response
 ) => {
   try {
     const ingredients = req.body.ingredientsSelected as string[]; // ["tomato", "onion", "garlic"]
@@ -25,10 +24,7 @@ export const searchController = async (
     //falta que devuelta las recetas
 
     return res.send({ results, recipeDetails });
-  } catch (error) {
-    if (!(error instanceof AppError)) {
-      return res.status(500).json(error);
-    }
-    return next(error);
+  } catch (error: any) {
+    return res.status(500).json({ error: error.message })
   }
 };

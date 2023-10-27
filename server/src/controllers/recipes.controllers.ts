@@ -45,8 +45,8 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 			equipment
 		}
 
-	} catch (error) {
-		console.error('Error while getting the recipe details', error);
+	} catch (error: any) {
+		console.error('Error while getting the recipe details', error.message);
 		return null;
 	}
 }
