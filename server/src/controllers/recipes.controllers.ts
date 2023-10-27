@@ -6,7 +6,7 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 	try {
 
 		const response = await
-			axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${process.env.KEY_3}`
+			axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${process.env.apiKey}`
 			);
 
 		const recipeDetails = response.data;
@@ -26,7 +26,7 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 
 		//Obtener detalles del equipo en formato JSON
 
-		const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${process.env.KEY_3}`
+		const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${process.env.apiKey}`
 		);
 
 		const equipmentData = equipmentResponse.data;

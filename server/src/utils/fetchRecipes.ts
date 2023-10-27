@@ -7,11 +7,11 @@ const fetchRecipesFromAPI = async (
 ) => {
 	try {
 		const formattedIngredients = ingredients;
-
-		const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${process.env.KEY_3}&ingredients=${formattedIngredients}&diet=${dietType}`;
-
+console.log(formattedIngredients)
+		const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${process.env.apiKey}&ingredients=${formattedIngredients}&diet=${dietType}`;
+console.log(URI)
 		const response = await axios.get(URI);
-
+console.log(response)
 		return response.data;
 	} catch (error) {
 		return error;
