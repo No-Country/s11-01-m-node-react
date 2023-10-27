@@ -22,7 +22,7 @@ const fetchRecipesFromAPI = (ingredients, dietType) => __awaiter(void 0, void 0,
         return response.data;
     }
     catch (error) {
-        return error.message;
+        return error;
     }
 });
 exports.default = fetchRecipesFromAPI;

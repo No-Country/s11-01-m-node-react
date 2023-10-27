@@ -11,9 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.searchController = void 0;
 const search_services_1 = require("../services/search.services");
+const app_error_1 = require("../utils/app.error");
 const recipes_controllers_1 = require("./recipes.controllers");
 // Captura los datos que envía el front
-const searchController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const searchController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const ingredients = req.body.ingredientsSelected; // ["tomato", "onion", "garlic"]
         if (!ingredients || ingredients.length === 0) {
@@ -29,7 +30,10 @@ const searchController = (req, res) => __awaiter(void 0, void 0, void 0, functio
         return res.send({ results, recipeDetails });
     }
     catch (error) {
-        return res.status(500).json({ error: error.message });
+        if (!(error instanceof app_error_1.AppError)) {
+            return res.status(500).json(error);
+        }
+        return next(error);
     }
 });
 exports.searchController = searchController;

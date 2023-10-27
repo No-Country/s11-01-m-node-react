@@ -1,5 +1,5 @@
 import express, { Express } from "express";
-import router from "../../src/routes/search.routes";
+import router from "../../routes/search.routes";
 import request from "supertest";
 
 let app: Express;

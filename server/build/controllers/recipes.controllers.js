@@ -47,7 +47,7 @@ function getRecipeDetails(recipeId) {
             };
         }
         catch (error) {
-            console.error('Error while getting the recipe details', error.message);
+            console.error('Error while getting the recipe details', error);
             return null;
         }
     });

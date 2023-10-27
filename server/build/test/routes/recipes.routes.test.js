@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const express_1 = __importDefault(require("express"));
-const recipes_routes_1 = __importDefault(require("../../src/routes/recipes.routes"));
+const recipes_routes_1 = __importDefault(require("../../routes/recipes.routes"));
 let app;
 beforeAll(() => {
     app = (0, express_1.default)();
