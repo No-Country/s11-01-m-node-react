@@ -96,7 +96,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
     }
     catch (error) {
-        return res.json(error);
+        return res.status(500).json({ error: error.message });
     }
 });
 exports.login = login;
