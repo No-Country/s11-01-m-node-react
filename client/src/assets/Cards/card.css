@@ -1,0 +1,69 @@
+.card-box{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 9px;
+}
+.card-box img{
+    width: 100%;
+}
+.text-box{
+    position: absolute;
+    margin-top: -8%;
+    color: #fff;
+    padding: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.text-box p{
+    margin-bottom: 0;
+}
+.secondary-text-box{
+    position: relative;  
+    margin-top: -6px;
+    display: flex;
+    align-items: center;
+    gap: 2rem
+}
+.secondary-text-box p{
+    font-size: .8rem;
+}
+.second-line{
+    display: flex;
+}
+.clock{
+    margin-top: 12px;
+
+}
+@media only screen and (min-width: 1026px) and (max-width: 1180px){
+  .text-box{
+    margin-top: -10%;
+  }
+  .secondary-text-box{
+    gap: 1.5rem
+  }
+    }
+    @media only screen and (min-width: 979px) and (max-width: 1025px){
+        .text-box{
+        margin-top: -12%;
+    }
+}
+@media only screen and (min-width: 700px) and (max-width: 980px){
+    .text-box{
+        margin-top: -15%;
+}
+}
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .text-box{
+        margin-top: -26%;
+    }
+    .diet-type-mobile{
+        display: none;
+    }
+
+    .secondary-text-box{
+        gap:0
+
+        }
+    
+}

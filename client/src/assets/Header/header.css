@@ -1,0 +1,37 @@
+.header-backgound{
+    width: 100vw;
+    display: flex;
+    padding: 10px  60px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 10vh;
+}
+.logo{
+    width: 110px;
+}
+.logo-link{
+    flex-grow: 1;
+}
+.header-link{
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    padding: 0 20px;
+}
+.header-link-special{
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    background-color: #F2CB05;
+    padding: 18px 27px 18px 27px;
+    border-radius: 16px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .header-backgound{
+        padding: 10px 30px;
+    }
+}
