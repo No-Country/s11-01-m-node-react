@@ -17,7 +17,7 @@ const axios_1 = __importDefault(require("axios"));
 const fetchRecipesFromAPI = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const formattedIngredients = ingredients;
-        const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${process.env.apikey}&ingredients=${formattedIngredients}&diet=${dietType}`;
+        const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${process.env.apiKey}&ingredients=${formattedIngredients}&diet=${dietType}`;
         const response = yield axios_1.default.get(URI);
         return response.data;
     }
