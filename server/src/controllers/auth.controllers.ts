@@ -43,7 +43,7 @@ export const register = async (req: Request, res: Response): Promise<Response> =
 	}
 }
 
-export const login = async (req: Request, res: Response): Promise<Response> => {
+export const login = async (req: Request, res: Response): Promise<any> => {
 	try {
 		const { email, password } = req.body
 		if (!email || !password) {
@@ -76,21 +76,12 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 		}
 
 		token = generateToken(user)
-		return res.status(200).cookie('Authorization',
-			token,
-			{
-				maxAge: 600000, // 10 minutes
-				httpOnly: true
-			}).json(
-				{
-					code: 200,
-					message: null,
-					data: {
-						email,
-						user,
-						token
-					}
-				})
+		res.cookie('Authorization', token, {
+			maxAge: 600000, // 10 minutes
+			httpOnly: true
+		});
+		// Redirigir al usuario al home
+		return res.redirect('/');
 	} catch (error) {
 		return res.json(error)
 	}
