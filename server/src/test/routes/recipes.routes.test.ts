@@ -1,6 +1,6 @@
 import request from "supertest";
 import express, { Express } from "express";
-import router from "../../src/routes/recipes.routes";
+import router from "../../routes/recipes.routes";
 
 let app: Express;
 
