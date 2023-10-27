@@ -20,4 +20,10 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use(passport_1.default.initialize());
 passport_1.default.use(passport_middleware_1.default);
 app.use('/v1', index_1.default);
+app.use('/', (_req, res) => {
+    return res.send('Hello CookMatch!');
+});
+app.use('*', (_req, res) => {
+    return res.status(404).send('Nothing to see here :(');
+});
 exports.default = app;

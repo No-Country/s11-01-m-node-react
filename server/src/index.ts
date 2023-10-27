@@ -12,9 +12,6 @@ const startServer = () => {
       console.log(`Server running on http://localhost:${PORT}`);
     }
   })
-  // server.listen(PORT, () => {
-  //   console.log(`Server running on http://localhost:${PORT}`);
-  // });
 };
 
 startServer();
