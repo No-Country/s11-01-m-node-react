@@ -79,17 +79,18 @@
 .selected-ingredients {
   display: flex;
   margin: .5rem 0 0 0;
+  gap: 12px;
 }
 .ingredients {
   border-radius: 2rem;
-  width: fit-content;
   height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 0.3rem 0 0.5rem;
-  margin-right: 1rem;
   border: 1px solid #F2CB05;
+  margin: 0;
+
 }
 .ingredients p {
   font-size: 14px;
@@ -182,6 +183,7 @@
 }
 .search-items{
  display: flex;
+ margin: 0;
 }
 .subtitle{
   font-weight: 700;
