@@ -11,7 +11,8 @@ export const getIngredients = async (
   next: NextFunction
 ) => {
   try {
-    const { ingredients, dietTypeSelected } = req.body;
+    const ingredients = req.query.ingredients as string;
+    const dietTypeSelected = req.query.dietTypeSelected as string;
     const data = await fetchRecipes(ingredients, dietTypeSelected);
 
     return res.status(HTTPCODES.OK).json({

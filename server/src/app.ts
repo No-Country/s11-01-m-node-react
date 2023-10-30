@@ -18,11 +18,8 @@ app.use(passport.initialize());
 passport.use(passportMiddleware)
 
 app.use('/v1', router);
-app.use('/', (_req, res) => {
-  return res.send('Hello CookMatch!')
-})
 app.use('*', (_req, res) => {
-  return res.status(404).send('Nothing to see here :(')
+  return res.status(404).send('Nothing to see here.')
 })
 
 export default app;
