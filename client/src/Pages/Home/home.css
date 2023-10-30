@@ -1,7 +1,7 @@
 
 .background {
   width: 100vw;
-  padding: 2rem;
+  padding: 2rem 4rem;
   box-sizing: border-box;
 }
 .title-one {
@@ -199,13 +199,7 @@
   display: none;
 }
 /* Recipies Section */
-.recipies-box{
-  padding: 0 40px;
-}
-.recipies-background{
- padding: 24px 40px 0 40px;
- box-sizing: border-box;
-}
+
 .recipies-box h5{
   margin: 0;
   padding: 0;
@@ -215,7 +209,7 @@
   width: 100%;
   box-sizing: border-box;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+  gap: 20px;
   padding: 0;
   margin: 12px 0;
 }
