@@ -1,9 +1,10 @@
 .landing-background{
     width: 100vw;
     height: 90vh;
+    max-width: 1440px;
 }
 .big-img{
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     object-fit: cover;
 }
