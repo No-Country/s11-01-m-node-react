@@ -11,7 +11,7 @@ export const searchController = async (req: Request, res: Response) => {
       return res.status(400).send({ error: "Ingredients are required." });
     }
 
-    const results = await findByIngredients(ingredients, "vegan"); // vacio
+    const results = await findByIngredients(ingredients, "vegan");
     const recipeDetails = await Promise.all(
       results.map(async (recipe: any) => ({
         details: await getRecipeDetails(recipe.id),
