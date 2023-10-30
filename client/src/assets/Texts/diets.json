@@ -1,9 +1,9 @@
 {
     "diets": [
-          {"types": "vegan", "title":"Vegan","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
-          { "types":  "vegetarian", "title":"Vegetarian", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
-          { "types":  "glutenfree","title": "Gluten free", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
-          { "types":  "dairyFree", "title": "Dairy free","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/healthy_gdebyq.jpg"},
+          {"types": "vegan", "title":"Vegan","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698595732/cookmatch/vegan_h8lfnw.jpg"},
+          { "types":  "vegetarian", "title":"Vegetarian", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698595732/cookmatch/vegetarian_eqznqb.jpg"},
+          { "types":  "glutenfree","title": "Gluten free", "img":"https://res.cloudinary.com/danb0chax/image/upload/v1698595732/cookmatch/gluttenFree_xvlu6w.jpg"},
+          { "types":  "dairyFree", "title": "Dairy free","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698595733/cookmatch/dairyFree_hx2e9f.jpg"},
          
           { "types":   "lowFodmap","title": "Low fodmap","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/lowFodmap_k8bxrr.jpg"},
           { "types":   "veryPopular", "title": "Very popular","img":"https://res.cloudinary.com/danb0chax/image/upload/v1698244973/cookmatch/popular_nzqmdc.jpg"},
@@ -224,7 +224,241 @@
             "Spinach",
             "Pork",
             "Lamb",
-            "Soy Milk"
+            "Soy Milk",
+            "Mango",
+            "Cheese",
+            "Cream",
+            "onion",
+            "pepper"
         ]
-    }
-}
+    },
+    "recipies": [
+        {
+            "id": 1,
+            "name": "Pokebowl",
+            "dietType": "glutenfree",
+            "time": "15-20min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698600218/cookmatch/Pokebowl_hnlywu.jpg",
+            "ingredients": [
+                "1/4 c. low-sodium soy sauce",
+                "2 tsp. rice vinegar",
+                "2 tsp. sesame oil",
+                "1 tsp. freshly grated ginger",
+                "Pinch of crushed red pepper flakes",
+                "2 green onions, thinly sliced, plus more for garnish",
+                "1 tsp. toasted sesame seeds, plus more for garnish",
+                "1 lb. sushi-grade ahi tuna, cut into bite-size pieces"
+            ],
+            "directions": {
+                "step1": "In a large bowl, whisk together soy sauce, rice vinegar, sesame oil, ginger, red pepper flakes, green onions, and sesame seeds. Add tuna and toss to coat. Refrigerate for at least 15 minutes or up to 1 hour.",
+                "step2": "To serve, add rice to the bottom of four bowls. Top with tuna and toppings of your choice. Garnish with green onions and sesame seeds before serving."
+            }
+        },
+        {
+            "id": 2,
+            "name": "Veggie Stir-Fry",
+            "dietType": "vegetarian",
+            "time": "20-25min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698604697/cookmatch/VeggieStir-Fry_mekdzy.jpg",
+            "ingredients": [
+                "2 cups mixed vegetables (bell peppers, broccoli, carrots, snow peas, etc.)",
+                "1/4 cup soy sauce",
+                "1 tbsp sesame oil",
+                "2 cloves garlic, minced",
+                "1 tsp ginger, minced",
+                "1 cup cooked rice or noodles"
+            ],
+            "directions": {
+                "step1": "Heat the sesame oil in a pan and add garlic and ginger. Sauté for a minute.",
+                "step2": "Add the mixed vegetables and stir-fry for about 10 minutes. Add soy sauce and cook for another 2-3 minutes.",
+                "step3": "Serve over cooked rice or noodles."
+            }
+        },
+        {
+            "id": 3,
+            "name": "Chicken Alfredo",
+            "dietType": "veryPopular",
+            "time": "25-30min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698601325/cookmatch/chicke-alfredo_xcuacd.jpg",
+            "ingredients": [
+                "8 oz fettuccine pasta",
+                "2 boneless, skinless chicken breasts",
+                "2 cups heavy cream",
+                "1/2 cup grated Parmesan cheese",
+                "2 cloves garlic, minced",
+                "Salt and black pepper to taste"
+            ],
+            "directions": {
+                "step1": "Cook the fettuccine pasta according to package instructions. Drain and set aside.",
+                "step2": "In a separate pan, cook the chicken breasts until no longer pink in the center. Slice into strips.",
+                "step3": "In a saucepan, heat the heavy cream over low heat, and stir in the Parmesan cheese and minced garlic. Cook until the sauce thickens.",
+                "step4": "Combine the cooked pasta, chicken, and Alfredo sauce. Season with salt and pepper. Serve hot."
+            }
+        },
+        {
+            "id": 4,
+            "name": "Vegan Quinoa Salad",
+            "dietType": "vegan",
+            "time": "15-20min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698601400/cookmatch/pexels-karen-laa%CC%8Ark-boshoff-9893187_sm7gux.jpg",
+            "ingredients": [
+                "1 cup quinoa, cooked and cooled",
+                "1 cup cherry tomatoes, halved",
+                "1 cup cucumber, diced",
+                "1/2 cup red onion, finely chopped",
+                "1/4 cup fresh parsley, chopped",
+                "1/4 cup olive oil",
+                "2 tbsp lemon juice",
+                "Salt and pepper to taste"
+            ],
+            "directions": {
+                "step1": "In a large bowl, combine quinoa, cherry tomatoes, cucumber, red onion, and parsley.",
+                "step2": "In a small bowl, whisk together olive oil, lemon juice, salt, and pepper. Drizzle over the salad and toss to combine.",
+                "step3": "Refrigerate before serving."
+            }
+        },
+        {
+            "id": 5,
+            "name": "Spaghetti Carbonara",
+            "dietType": "veryPopular",
+            "time": "20-25min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698613804/cookmatch/spaguetti_carbonara_wwoxaa.jpg",
+            "ingredients": [
+              "8 oz spaghetti",
+              "2 large eggs",
+              "1 cup grated Pecorino Romano cheese",
+              "4 oz pancetta or guanciale, diced",
+              "2 cloves garlic, minced",
+              "Salt and black pepper to taste"
+            ],
+            "directions": {
+              "step1": "Cook spaghetti according to package instructions. Drain and set aside.",
+              "step2": "In a skillet, sauté pancetta or guanciale until crispy. Add minced garlic and cook briefly.",
+              "step3": "In a bowl, whisk together eggs, Pecorino Romano cheese, salt, and pepper.",
+              "step4": "Toss cooked spaghetti with the egg mixture and pancetta. Serve hot."
+            }
+          },
+          {
+            "id": 6,
+            "name": "Avocado Salsa",
+            "dietType": "vegetarian",
+            "time": "10-15min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698613818/cookmatch/avocado_salsa_yrsjot.jpg",
+            "ingredients": [
+              "2 ripe avocados, diced",
+              "1/2 red onion, finely chopped",
+              "1 red bell pepper, diced",
+              "1 jalapeño pepper, seeded and minced",
+              "1/4 cup fresh cilantro, chopped",
+              "2 tbsp lime juice",
+              "Salt to taste"
+            ],
+            "directions": {
+              "step1": "In a bowl, combine avocados, red onion, red bell pepper, jalapeño pepper, and cilantro.",
+              "step2": "Drizzle lime juice over the mixture, and season with salt. Mix well. Serve as a topping or with tortilla chips."
+            }
+          },
+        
+          {
+            "id": 7,
+            "name": "Crispy Baked Chicken",
+            "dietType": "glutenfree",
+            "time": "35-40 minutes",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698614094/cookmatch/crispy_chiken_nv3kqb.jpg",
+            "ingredients": [
+              "4 boneless, skinless chicken breasts",
+              "1 cup gluten-free breadcrumbs",
+              "1/2 cup grated Parmesan cheese",
+              "1 tsp paprika",
+              "1 tsp garlic powder",
+              "Salt and black pepper to taste",
+              "2 eggs, beaten"
+            ],
+            "directions": {
+              "step1": "Preheat the oven to 375°F (190°C).",
+              "step2": "In a bowl, combine breadcrumbs, Parmesan cheese, paprika, garlic powder, salt, and pepper.",
+              "step3": "Dip chicken breasts in beaten eggs, then coat with breadcrumb mixture. Place on a baking sheet.",
+              "step4": "Bake for 25-30 minutes or until chicken is cooked through and crispy."
+            }
+          },
+          {
+            "id": 8,
+            "name": "Greek Salad",
+            "dietType": "vegetarian",
+            "time": "15min",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698614222/cookmatch/greek_salad_p2tdoz.jpg",
+            "ingredients": [
+              "2 cucumbers, diced",
+              "4 tomatoes, diced",
+              "1 red onion, thinly sliced",
+              "1/2 cup Kalamata olives, pitted",
+              "1/2 cup feta cheese, crumbled",
+              "2 tbsp extra-virgin olive oil",
+              "2 tbsp red wine vinegar",
+              "1 tsp dried oregano",
+              "Salt and black pepper to taste"
+            ],
+            "directions": {
+              "step1": "In a large bowl, combine cucumbers, tomatoes, red onion, olives, and feta cheese.",
+              "step2": "In a small bowl, whisk together olive oil, red wine vinegar, dried oregano, salt, and pepper.",
+              "step3": "Drizzle the dressing over the salad and toss to combine. Serve chilled."
+            }
+          },
+          {
+            "id": 9,
+            "name": "Beef Tacos",
+            "dietType": "dairyFree",
+            "time": "25-30 minutes",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698614329/cookmatch/beff_tacos_tz7fmh.jpg",
+            "ingredients": [
+              "1 lb ground beef",
+              "1 packet taco seasoning",
+              "8 small flour tortillas",
+              "1 cup shredded cheddar cheese",
+              "1 cup shredded lettuce",
+              "1/2 cup diced tomatoes",
+              "1/4 cup sour cream"
+            ],
+            "directions": {
+              "step1": "In a skillet, brown ground beef and drain excess fat. Add taco seasoning and cook according to package instructions.",
+              "step2": "Warm tortillas in the oven or microwave.",
+              "step3": "Assemble tacos with beef, cheese, lettuce, tomatoes, and a dollop of sour cream."
+            }
+          },
+          {
+            "id": 10,
+            "name": "Mushroom Risotto",
+            "dietType": "vegetarian",
+            "time": "35-40 minutes",
+            "img": "https://res.cloudinary.com/danb0chax/image/upload/v1698614451/cookmatch/risotto_zrx8ig.jpg",
+            "ingredients": [
+              "1 cup Arborio rice",
+              "4 cups vegetable broth",
+              "1 cup mushrooms, sliced",
+              "1/2 cup white wine",
+              "1/2 cup grated Parmesan cheese",
+              "1/4 cup butter",
+              "1/2 onion, finely chopped",
+              "2 cloves garlic, minced",
+              "Salt and black pepper to taste"
+            ],
+            "directions": {
+              "step1": "In a saucepan, heat vegetable broth and keep it warm.",
+              "step2": "In a separate pan, sauté onion and garlic in butter. Add mushrooms and cook until softened.",
+              "step3": "Stir in Arborio rice and cook for a minute. Add white wine and cook until absorbed.",
+              "step4": "Gradually add warm broth, one ladle at a time, stirring constantly until rice is creamy and cooked.",
+              "step5": "Stir in Parmesan cheese, salt, and pepper. Serve hot."
+            }
+          }
+       
+        ]
+      }
+    
+      
+      
+      
+      
+      
+       
+    
+    
