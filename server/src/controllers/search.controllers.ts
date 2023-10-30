@@ -18,8 +18,6 @@ export const searchController = async (req: Request, res: Response) => {
       }))
     );
 
-    //falta que devuelta las recetas
-
     return res.send({ results, recipeDetails });
   } catch (error: any) {
     return res.status(500).json({ error: error.message });
