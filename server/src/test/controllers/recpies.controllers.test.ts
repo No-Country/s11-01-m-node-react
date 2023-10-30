@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getRecipeDetails } from "../../src/controllers/recipes.controllers"; //
+import { getRecipeDetails } from "../../controllers/recipes.controllers"; //
 
 // Mocking environment variable
 process.env.apiKey = "your-api-key";
