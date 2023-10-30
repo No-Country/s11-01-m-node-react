@@ -2,14 +2,14 @@ import fetchRecipesFromAPI from "../utils/fetchRecipes";
 
 // Función para obtener las recetas
 
-export const getRecipes = async (ingredients: string[], dietType: string) => {
+export const getRecipes = async (ingredients: string, dietType: string) => {
   const res = await fetchRecipesFromAPI(ingredients, dietType);
 
   return res;
 };
 
 export const findByIngredients = async (
-  ingredients: string[],
+  ingredients: string,
   dietType: string
 ) => {
   const res = await fetchRecipesFromAPI(ingredients, dietType); // entra a la funcion de fetchRecipesFromAPI
