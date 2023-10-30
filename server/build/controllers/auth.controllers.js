@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logout = exports.login = exports.register = void 0;
 const users_services_1 = require("../services/users.services");
-const jwt_1 = require("../utils/jwt");
 const bcrypt_1 = require("../utils/bcrypt");
+const jwt_1 = require("../utils/jwt");
 const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;
@@ -59,7 +59,6 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 data: null
             });
         }
-        let token;
         const user = yield (0, users_services_1.getUserByEmail)(email);
         if (!user) {
             res.status(400);
@@ -78,7 +77,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 data: null
             });
         }
-        token = (0, jwt_1.generateToken)(user);
+        const token = (0, jwt_1.generateToken)(user);
         return res.status(200).cookie('Authorization', token, {
             maxAge: 600000,
             httpOnly: true

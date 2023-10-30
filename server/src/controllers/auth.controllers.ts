@@ -3,8 +3,8 @@ import {
 	createUser,
 	getUserByEmail,
 } from '../services/users.services';
-import { generateToken } from '../utils/jwt';
 import { comparePassword } from "../utils/bcrypt";
+import { generateToken } from '../utils/jwt';
 
 
 export const register = async (req: Request, res: Response): Promise<Response> => {
@@ -54,7 +54,6 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 				data: null
 			})
 		}
-		let token
 		const user = await getUserByEmail(email)
 		if (!user) {
 			res.status(400)
@@ -75,7 +74,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 			})
 		}
 
-		token = generateToken(user)
+		const token = generateToken(user)
 		return res.status(200).cookie('Authorization',
 			token,
 			{

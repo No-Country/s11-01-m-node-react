@@ -7,6 +7,7 @@ import { getRecipeDetails } from "./recipes.controllers";
 export const searchController = async (req: Request, res: Response) => {
   try {
     const ingredients = req.query.ingredientsSelected as string; // "tomato", "onion", "garlic"
+
     if (!ingredients || ingredients.length === 0) {
       return res.status(400).send({ error: "Ingredients are required." });
     }
@@ -17,6 +18,8 @@ export const searchController = async (req: Request, res: Response) => {
         details: await getRecipeDetails(recipe.id),
       }))
     );
+
+    //falta que devuelta las recetas
 
     return res.send({ results, recipeDetails });
   } catch (error: any) {

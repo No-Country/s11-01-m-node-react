@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  <!-- <a href="https://s11nocountry.netlify.app">Demo</a> -->
+
 </div>
 
 <h1 align="center">CookMatch s11-01-node-react</h1>
