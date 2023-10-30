@@ -1,5 +1,5 @@
-import { searchController } from "../../src/controllers/search.controllers";
-import * as searchServices from "../../src/services/search.services";
+import { searchController } from "../../controllers/search.controllers";
+import * as searchServices from "../../services/search.services";
 import { Request, Response } from "express";
 jest.mock("../../src/services/search.services");
 
@@ -17,13 +17,11 @@ describe("searchController", () => {
     return res;
   };
 
-  const mockNext = jest.fn();
-
   it("should return 400 if ingredients are not provided", async () => {
     const req = mockRequest();
     const res = mockResponse();
 
-    await searchController(req, res, mockNext);
+    await searchController(req, res);
 
     expect(res.status).toHaveBeenCalledWith(400);
     expect(res.send).toHaveBeenCalledWith({
@@ -51,7 +49,7 @@ describe("searchController", () => {
       getRecipeDetails,
     }));
 
-    await searchController(req, res, mockNext);
+    await searchController(req, res);
 
     expect(res.send).toHaveBeenCalledWith({
       results: [
@@ -74,7 +72,7 @@ describe("searchController", () => {
       .spyOn(searchServices, "findByIngredients")
       .mockRejectedValue(new Error("Network Error"));
 
-    await searchController(req, res, mockNext);
+    await searchController(req, res);
 
     expect(res.status).toHaveBeenCalledWith(500);
     expect(res.json).toHaveBeenCalled();

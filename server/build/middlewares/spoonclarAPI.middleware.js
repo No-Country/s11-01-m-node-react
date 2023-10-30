@@ -20,7 +20,8 @@ const app_error_1 = require("../utils/app.error");
 // Capturar los datos que envia el front
 const getIngredients = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { ingredients, dietTypeSelected } = req.body;
+        const ingredients = req.query.ingredients;
+        const dietTypeSelected = req.query.dietTypeSelected;
         const data = yield (0, fetchRecipes_1.default)(ingredients, dietTypeSelected);
         return res.status(httpCodes_1.HTTPCODES.OK).json({
             status: "success",
