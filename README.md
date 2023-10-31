@@ -7,6 +7,9 @@
 </div>
 
 <h1 align="center">CookMatch s11-01-node-react</h1>
+<p>
+Go to the <a href="https://cookmatch-8s768rki6-andycambras-projects.vercel.app/">CookMatch</a> website
+</p>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/No-Country/s11-nocountry?color=56BEB8">
@@ -24,7 +27,7 @@
 
  Status 
  <h4 align="center"> 
-	🚧  S11 Nocountry 🚀 Under construction...  🚧
+  S11 Nocountry 🚀 
 </h4> 
 
 <hr>
@@ -72,13 +75,19 @@ $ git clone https://github.com/No-Country/s11-nocountry
 # Access
 $ cd s11-nocountry
 
-# Install dependencies
+# Install dependencies for the Backend
+$ cd server
 $ npm install
+$ npm run dev
 
-# Run the project
-$ npm start
+## For the Frontend
+$ cd client
+$ npm install 
+$ npm install vite 
+$ npm run dev
 
 # The server will initialize in the <http://localhost:3000>
+
 ```
 
 ## :memo: License ##
@@ -87,20 +96,23 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 
 Made with :heart: by:
-PM: Emi Araujo
-Tester/QA: <a href="https://github.com/dextr0yer">Angelo Montero Osorio </a>
-UX/UI Designers:
-<a href="https://www.behance.net/samsomicaela?tracking_source=search_users|micaela%20samso"> Micaela</a>
- , Flavia
-Frontend:
+<h3>Product Manager:</h3>
+<a href="https://www.linkedin.com/in/enmiaraujo/"> Emi Araujo</a>
+<h3>Tester/QA:  </h3>
+<a href="https://github.com/dextr0yer">Angelo Montero Osorio </a>
+
+<h3>UX/UI Designers:</h3>
+
+<a href="https://www.behance.net/samsomicaela?tracking_source=search_users|micaela%20samso"> Micaela Samso</a>
+<a href="https://www.behance.net/flaviagonzalez">Flavia Gonzalez </a>
+<h3>Frontend:</h3>
 <a href="https://github.com/Joseacode" target="_blank"> Jose Antonio Miró </a>
 <a href="https://github.com/AndyCambra" target="_blank">Andrea Marcela Cambra </a>
 
-
-Backend:
+<h3>Backend:</h3>
 <a href="https://github.com/lonerocamila" target="_blank"> Camila Lo Nero </a>
 <a href="https://github.com/Adremess" target="_blank"> Esteban Adrian Gonzalez</a>
-<!-- <a href="https://github.com/juampi" target="_blank"> Juan Pablo </a>  -->
+ <a href="https://github.com/Juampi095" target="_blank"> Juan Pablo </a> 
 
 &#xa0;
 
