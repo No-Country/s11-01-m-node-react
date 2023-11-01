@@ -16,18 +16,21 @@ exports.searchController = void 0;
 const search_services_1 = require("../services/search.services");
 // import { AppError } from "../utils/app.error";
 const recipes_controllers_1 = require("./recipes.controllers");
-const apikeyHandler_1 = __importDefault(require("./../utils/apikeyHandler"));
+const apikey_util_1 = __importDefault(require("../utils/apikey.util"));
+const filterRecipes_1 = __importDefault(require("../utils/filterRecipes"));
+const recipes_services_1 = require("../services/recipes.services");
 // Captura los datos que envía el front
 const searchController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const ingredients = req.query.ingredientsSelected; // "tomato", "onion", "garlic"
-        let key = apikeyHandler_1.default.getKey();
+        const diet = req.query.dietTypeSelected;
+        let key = apikey_util_1.default.getKey();
         if (!ingredients || ingredients.length === 0) {
             return res.status(400).send({ error: "Ingredients are required." });
         }
-        const results = yield (0, search_services_1.findByIngredients)(ingredients, "vegan", key);
-        if (results instanceof Object && results.status === 401) {
-            return res.status(401).json({ error: 'API Key limit reached' });
+        const results = yield (0, search_services_1.findByIngredients)(ingredients, key);
+        if (results instanceof Object && results.status === 402) {
+            return res.status(402).json({ error: 'API Key limit reached' });
         }
         if (results instanceof String)
             res.status(500).json({ error: results });
@@ -36,8 +39,12 @@ const searchController = (req, res) => __awaiter(void 0, void 0, void 0, functio
                 details: yield (0, recipes_controllers_1.getRecipeDetails)(recipe.id, key),
             });
         })));
+        const { filterRecipes: recipes, filterDetails: details } = (0, filterRecipes_1.default)(results, recipeDetails, diet);
+        if (recipes.length === 0 || details.length === 0) {
+            return res.send(yield (0, recipes_services_1.randomRecipeByDiet)(diet, key));
+        }
         //falta que devuelta las recetas
-        return res.send({ results, recipeDetails });
+        return res.json({ recipes, details });
     }
     catch (error) {
         return res.status(500).json({ error: error.message });

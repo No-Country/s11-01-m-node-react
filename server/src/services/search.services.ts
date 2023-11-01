@@ -9,12 +9,12 @@ export const getRecipes = async (ingredients: string, key: string) => {
 };
 
 export const findByIngredients = async (
-  ingredients: string,
-  key: string
-) => {
-  const res = await fetchRecipesFromAPI(ingredients, key); // entra a la funcion de fetchRecipesFromAPI
+    ingredients: string,
+    key: string
+  ) => {
+    const res = await fetchRecipesFromAPI(ingredients, key); // entra a la funcion de fetchRecipesFromAPI
 
-  return res;
+    return res;
 };
 
 // // Función para crear una receta

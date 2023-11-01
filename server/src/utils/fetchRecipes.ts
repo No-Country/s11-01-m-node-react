@@ -3,23 +3,23 @@ import axios from "axios";
 // Conecta con la api y devuelve una receta formateando los ingredientes y el tipo de  dieta. Devuelve un objeto con los datos de la receta
 const fetchRecipesFromAPI = async (ingredients: string, key: string) => {
   try {
-    const formattedIngredients = ingredients;
+      const formattedIngredients = ingredients;
 
-    const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${key}&ingredients=${formattedIngredients}`;
+      const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${key}&ingredients=${formattedIngredients}`;
 
-    const response = await axios.get(URI);
+      const response = await axios.get(URI);
 
-    if (response.data) {
+      if (response.data) {
 
+      }
+
+      return response.data;
+    } catch (error: any) {
+      if (error.response) {
+        return error.response
+      }
+      return 'Internal Server Error';
     }
-
-    return response.data;
-  } catch (error: any) {
-    if (error.response) {
-      return error.response
-    }
-    return 'Internal Server Error';
-  }
 };
 
 export default fetchRecipesFromAPI;
