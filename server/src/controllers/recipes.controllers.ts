@@ -11,17 +11,11 @@ export async function getRecipeDetails(recipeId: number, key: string): Promise<a
 
 		const recipeDetails = response.data;
 
-		const id = recipeDetails.id;
 		const title = recipeDetails.title;
 		const Image = recipeDetails.image;
 		const ReadyinMinutes = recipeDetails.readyInMinutes;
 		const Summary = recipeDetails.summary;
 		const Instructions = recipeDetails.instructions;
-		const glutenFree = recipeDetails.glutenFree;
-		const vegan = recipeDetails.vegan;
-		const vegetarian = recipeDetails.vegetarian;
-		const dairyFree = recipeDetails.dairyFree;
-
 
 
 		const ingredients = recipeDetails.extendedIngredients.map((ingredient: any) => ({
@@ -42,18 +36,13 @@ export async function getRecipeDetails(recipeId: number, key: string): Promise<a
 			image: equipment.image
 		}));
 		return {
-			id,
 			title,
 			Image,
 			ReadyinMinutes,
 			Summary,
 			Instructions,
 			ingredients,
-			equipment,
-			glutenFree,
-			vegan,
-			vegetarian,
-            dairyFree
+			equipment
 		}
 
 	} catch (error: any) {
