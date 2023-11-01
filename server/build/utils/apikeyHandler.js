@@ -8,13 +8,17 @@ class KeyHandler {
         }
         KeyHandler.instance = this;
         this.apiKeys = [
-            { key: process.env.KEY_1, usage: 0, limit: 10 },
-            { key: process.env.KEY_2, usage: 0, limit: 10 },
-            { key: process.env.KEY_3, usage: 0, limit: 10 },
-            { key: process.env.KEY_4, usage: 0, limit: 10 },
-            { key: process.env.KEY_5, usage: 0, limit: 10 },
-            { key: process.env.KEY_6, usage: 0, limit: 10 },
-            { key: process.env.KEY_7, usage: 0, limit: 10 },
+            { key: process.env.KEY_1, usage: 0, limit: 5 },
+            { key: process.env.KEY_2, usage: 0, limit: 5 },
+            { key: process.env.KEY_3, usage: 0, limit: 5 },
+            { key: process.env.KEY_4, usage: 0, limit: 5 },
+            { key: process.env.KEY_5, usage: 0, limit: 5 },
+            { key: process.env.KEY_6, usage: 0, limit: 5 },
+            { key: process.env.KEY_7, usage: 0, limit: 5 },
+            { key: process.env.KEY_8, usage: 0, limit: 5 },
+            { key: process.env.KEY_9, usage: 0, limit: 5 },
+            { key: process.env.KEY_10, usage: 0, limit: 5 },
+            { key: process.env.KEY_11, usage: 0, limit: 5 },
         ];
         this.currentKey = 0;
     }
