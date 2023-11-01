@@ -19,8 +19,6 @@ const fetchRecipesFromAPI = (ingredients, key) => __awaiter(void 0, void 0, void
         const formattedIngredients = ingredients;
         const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${key}&ingredients=${formattedIngredients}`;
         const response = yield axios_1.default.get(URI);
-        if (response.data) {
-        }
         return response.data;
     }
     catch (error) {

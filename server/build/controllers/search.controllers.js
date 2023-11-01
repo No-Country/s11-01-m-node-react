@@ -17,8 +17,8 @@ const search_services_1 = require("../services/search.services");
 // import { AppError } from "../utils/app.error";
 const recipes_controllers_1 = require("./recipes.controllers");
 const apikey_util_1 = __importDefault(require("../utils/apikey.util"));
-const filterRecipes_1 = __importDefault(require("../utils/filterRecipes"));
 const recipes_services_1 = require("../services/recipes.services");
+const filterRecipes_1 = __importDefault(require("../utils/filterRecipes"));
 // Captura los datos que envía el front
 const searchController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
