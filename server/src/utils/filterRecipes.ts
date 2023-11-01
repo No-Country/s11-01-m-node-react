@@ -72,6 +72,10 @@ export interface Details {
     vegan: boolean
     vegetarian: boolean
     dairyFree: boolean
+    lowFodMap: boolean
+    veryPopular: boolean
+    sustainable: boolean
+    veryHealthy: boolean
 }
 
 export interface Ingredient {
@@ -85,7 +89,7 @@ export interface Equipment {
     image: string
 }
 
-const dietsChecked = (diets: { [x: string]: any; dairyFree?: boolean; vegetarian?: boolean; glutenFree?: boolean; vegan?: boolean }, diet: string) => {
+const dietsChecked = (diets: { [x: string]: any; dairyFree?: boolean; vegetarian?: boolean; glutenFree?: boolean; vegan?: boolean, lowFodMap?: boolean, veryPopular?: boolean, sustainable?: boolean, veryHealthy?: boolean }, diet: string) => {
     return diets[diet]
 }
 
@@ -94,7 +98,11 @@ const filterRecipesByDiet = (recipes: Result[], details: RecipeDetail[], diet: s
         dairyFree: recipe.details.dairyFree,
         vegetarian: recipe.details.vegetarian,
         glutenFree: recipe.details.glutenFree,
-        vegan: recipe.details.vegan
+        vegan: recipe.details.vegan,
+        lowFodMap: recipe.details.lowFodMap,
+		veryPopular: recipe.details.veryPopular,
+		sustainable: recipe.details.sustainable,
+		veryHealty: recipe.details.veryHealthy
     }, diet
     ))
 
