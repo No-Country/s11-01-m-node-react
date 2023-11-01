@@ -10,12 +10,11 @@ export const getRecipes = async (ingredients: string, dietType: string, key: str
 
 export const findByIngredients = async (
   ingredients: string,
-  dietType: string,
   key: string
 ) => {
-  const res = await fetchRecipesFromAPI(ingredients, dietType, key); // entra a la funcion de fetchRecipesFromAPI
+  const res = await fetchRecipesFromAPI(ingredients, key); // entra a la funcion de fetchRecipesFromAPI
 
-  return res;
+    return res;
 };
 
 // // Función para crear una receta
