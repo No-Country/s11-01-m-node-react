@@ -12,20 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.randomRecipeByDiet = void 0;
 const axios_1 = __importDefault(require("axios"));
-// Conecta con la api y devuelve una receta formateando los ingredientes y el tipo de  dieta. Devuelve un objeto con los datos de la receta
-const fetchRecipesFromAPI = (ingredients, key) => __awaiter(void 0, void 0, void 0, function* () {
+const randomRecipeByDiet = (diet, key) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const formattedIngredients = ingredients;
-        const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${key}&ingredients=${formattedIngredients}`;
-        const response = yield axios_1.default.get(URI);
-        return response.data;
+        const URI = `${process.env.RANDOM_BYDIET}?apiKey=${key}&number=5&tags=${diet}`;
+        const { data } = yield axios_1.default.get(URI);
+        return data;
     }
     catch (error) {
-        if (error.response) {
-            return error.response;
+        if (error.response && error.response.status === 401) {
+            return { error: 'API Key limit reached' };
         }
-        return 'Internal Server Error';
+        return { error: 'Internal Server Error' };
     }
 });
-exports.default = fetchRecipesFromAPI;
+exports.randomRecipeByDiet = randomRecipeByDiet;
