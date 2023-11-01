@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getRecipeDetails = void 0;
 const axios_1 = __importDefault(require("axios"));
-function getRecipeDetails(recipeId) {
+function getRecipeDetails(recipeId, key) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield axios_1.default.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${process.env.apiKey}`);
+            const response = yield axios_1.default.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${key}`);
             const recipeDetails = response.data;
             const title = recipeDetails.title;
             const Image = recipeDetails.image;
@@ -30,7 +30,7 @@ function getRecipeDetails(recipeId) {
                 unit: ingredient.unit
             }));
             //Obtener detalles del equipo en formato JSON
-            const equipmentResponse = yield axios_1.default.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${process.env.apiKey}`);
+            const equipmentResponse = yield axios_1.default.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${key}`);
             const equipmentData = equipmentResponse.data;
             const equipment = equipmentData.equipment.map((equipment) => ({
                 name: equipment.name,
@@ -47,6 +47,9 @@ function getRecipeDetails(recipeId) {
             };
         }
         catch (error) {
+            if (error.response && error.response.status === 401) {
+                return { error: 'API Key limit reached' };
+            }
             console.error('Error while getting the recipe details', error);
             return null;
         }

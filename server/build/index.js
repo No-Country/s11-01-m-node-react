@@ -8,12 +8,8 @@ const app_1 = __importDefault(require("./app"));
 const PORT = process.env.PORT || 3000;
 const server = http_1.default.createServer(app_1.default);
 const startServer = () => {
-    server.listen({
-        port: PORT,
-        hostname: "0.0.0.0",
-        listeningListener: () => {
-            console.log(`Server running on http://localhost:${PORT}`);
-        }
+    server.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
     });
 };
 startServer();
