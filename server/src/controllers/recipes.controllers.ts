@@ -3,13 +3,13 @@ import axios from "axios";
 
 export async function getRecipeDetails(recipeId: number, key: string): Promise<any> {
 
-		try {
+	try {
 
-			const response = await
-				axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${key}`
-				);
+		const response = await
+			axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${key}`
+			);
 
-			const recipeDetails = response.data;
+		const recipeDetails = response.data;
 
 		const id = recipeDetails.id;
 		const title = recipeDetails.title;
@@ -24,18 +24,18 @@ export async function getRecipeDetails(recipeId: number, key: string): Promise<a
 
 
 
-			const ingredients = recipeDetails.extendedIngredients.map((ingredient: any) => ({
-				name: ingredient.name,
-				amount: ingredient.amount,
-				unit: ingredient.unit
-			}));
+		const ingredients = recipeDetails.extendedIngredients.map((ingredient: any) => ({
+			name: ingredient.name,
+			amount: ingredient.amount,
+			unit: ingredient.unit
+		}));
 
-			//Obtener detalles del equipo en formato JSON
+		//Obtener detalles del equipo en formato JSON
 
-			const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${key}`
-			);
+		const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${key}`
+		);
 
-			const equipmentData = equipmentResponse.data;
+		const equipmentData = equipmentResponse.data;
 
 		const equipment = equipmentData.equipment.map((equipment: any) => ({
 			name: equipment.name,
@@ -53,14 +53,14 @@ export async function getRecipeDetails(recipeId: number, key: string): Promise<a
 			glutenFree,
 			vegan,
 			vegetarian,
-            dairyFree
+			dairyFree
 		}
 
-		} catch (error: any) {
-			if (error.response && error.response.status === 401) {
-				return { error: 'API Key limit reached' }
-			}
-			console.error('Error while getting the recipe details', error);
-			return null;
+	} catch (error: any) {
+		if (error.response && error.response.status === 401) {
+			return { error: 'API Key limit reached' }
 		}
+		console.error('Error while getting the recipe details', error);
+		return null;
+	}
 }
