@@ -29,6 +29,10 @@ function getRecipeDetails(recipeId, key) {
             const vegan = recipeDetails.vegan;
             const vegetarian = recipeDetails.vegetarian;
             const dairyFree = recipeDetails.dairyFree;
+            const lowFodmap = recipeDetails.lowFodmap;
+            const veryPopular = recipeDetails.veryPopular;
+            const sustainable = recipeDetails.sustainable;
+            const veryHealthy = recipeDetails.veryHealthy;
             const ingredients = recipeDetails.extendedIngredients.map((ingredient) => ({
                 name: ingredient.name,
                 amount: ingredient.amount,
@@ -53,7 +57,11 @@ function getRecipeDetails(recipeId, key) {
                 glutenFree,
                 vegan,
                 vegetarian,
-                dairyFree
+                dairyFree,
+                lowFodmap,
+                veryPopular,
+                sustainable,
+                veryHealthy
             };
         }
         catch (error) {

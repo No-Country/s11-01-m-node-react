@@ -26,7 +26,7 @@ const searchController = (req, res) => __awaiter(void 0, void 0, void 0, functio
         const diet = req.query.dietTypeSelected;
         let key = apikey_util_1.default.getKey();
         if (!ingredients || ingredients.length === 0) {
-            return res.status(400).send({ error: "Ingredients are required." });
+            return res.status(200).send(yield (0, recipes_services_1.randomRecipeByDiet)(diet, key));
         }
         const results = yield (0, search_services_1.findByIngredients)(ingredients, key);
         if (results instanceof Object && results.status === 402) {
