@@ -14,15 +14,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 // Conecta con la api y devuelve una receta formateando los ingredientes y el tipo de  dieta. Devuelve un objeto con los datos de la receta
-const fetchRecipesFromAPI = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
+const fetchRecipesFromAPI = (ingredients, dietType, key) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const formattedIngredients = ingredients;
-        const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${process.env.apiKey}&ingredients=${formattedIngredients}&diet=${dietType}`;
+        const URI = `${process.env.SEARCH_BYINGREDIENTS}?apiKey=${key}&ingredients=${formattedIngredients}&diet=${dietType}`;
         const response = yield axios_1.default.get(URI);
         return response.data;
     }
     catch (error) {
-        return error;
+        if (error.response) {
+            return error.response;
+        }
+        return 'Internal Server Error';
     }
 });
 exports.default = fetchRecipesFromAPI;
