@@ -43,7 +43,7 @@ export const register = async (req: Request, res: Response): Promise<Response> =
 	}
 }
 
-export const login = async (req: Request, res: Response): Promise<Response> => {
+export const login = async (req: Request, res: Response): Promise<any> => {
 	try {
 		const { email, password } = req.body
 		if (!email || !password) {
@@ -54,6 +54,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 				data: null
 			})
 		}
+		let token
 		const user = await getUserByEmail(email)
 		if (!user) {
 			res.status(400)
@@ -74,25 +75,13 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 			})
 		}
 
-		const token = generateToken(user)
-		return res.status(200).cookie('Authorization',
-			token,
-			{
-				maxAge: 600000, // 10 minutes
-				httpOnly: true
-			}).json(
-				{
-					code: 200,
-					message: null,
-					data: {
-						user: {
-							id: user.id,
-							userId: user.userId,
-							email: user.email,
-							username: user.username
-						}
-					}
-				})
+		token = generateToken(user)
+		res.cookie('Authorization', token, {
+			maxAge: 600000, // 10 minutes
+			httpOnly: true
+		});
+		// Redirigir al usuario al home
+		return res.redirect('/');
 	} catch (error) {
 		return res.json(error)
 	}

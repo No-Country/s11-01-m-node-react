@@ -12,4 +12,5 @@ router.use("/search", searchRoutes); //ruta de búsqueda
 // router.use("/uploadcomments", commentRoutes) //ruta para subir comentarios
 // router.use("/savedposts", savedRoutes) //ruta para guardar recetas
 router.use("/recipeDetail", getRecipeDetails) //ruta para obtener detalle de recetas
+
 export default router;
