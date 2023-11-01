@@ -22,6 +22,8 @@ class KeyHandler {
 			{ key: process.env.KEY_3 as string, usage: 0, limit: 10 },
 			{ key: process.env.KEY_4 as string, usage: 0, limit: 10 },
 			{ key: process.env.KEY_5 as string, usage: 0, limit: 10 },
+			{ key: process.env.KEY_6 as string, usage: 0, limit: 10 },
+			{ key: process.env.KEY_7 as string, usage: 0, limit: 10 },
 		]
 		this.currentKey = 0
 	}

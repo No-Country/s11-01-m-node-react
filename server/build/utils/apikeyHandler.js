@@ -13,6 +13,8 @@ class KeyHandler {
             { key: process.env.KEY_3, usage: 0, limit: 10 },
             { key: process.env.KEY_4, usage: 0, limit: 10 },
             { key: process.env.KEY_5, usage: 0, limit: 10 },
+            { key: process.env.KEY_6, usage: 0, limit: 10 },
+            { key: process.env.KEY_7, usage: 0, limit: 10 },
         ];
         this.currentKey = 0;
     }
