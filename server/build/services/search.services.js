@@ -15,13 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.findByIngredients = exports.getRecipes = void 0;
 const fetchRecipes_1 = __importDefault(require("../utils/fetchRecipes"));
 // Función para obtener las recetas
-const getRecipes = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield (0, fetchRecipes_1.default)(ingredients, dietType);
+const getRecipes = (ingredients, dietType, key) => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield (0, fetchRecipes_1.default)(ingredients, dietType, key);
     return res;
 });
 exports.getRecipes = getRecipes;
-const findByIngredients = (ingredients, dietType) => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield (0, fetchRecipes_1.default)(ingredients, dietType); // entra a la funcion de fetchRecipesFromAPI
+const findByIngredients = (ingredients, dietType, key) => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield (0, fetchRecipes_1.default)(ingredients, dietType, key); // entra a la funcion de fetchRecipesFromAPI
     return res;
 });
 exports.findByIngredients = findByIngredients;

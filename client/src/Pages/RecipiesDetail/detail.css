@@ -1,0 +1,53 @@
+.hero-recipie-detail{
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+}
+.text-box-detail{
+  width: 40%;
+  background-color: #F2CB05;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.text-box-detail h5{
+    font-size: 2.5rem;
+    margin: 20px 0 0 0;
+}
+.text-box-detail p{
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+.img-box-detail{
+    width: 60%;
+    height: 30rem;
+    overflow: hidden;
+}
+.img-box-detail img{
+    width: 100%;
+    object-fit: cover;
+}
+.instructions{
+    width: 100%;
+    display: flex;
+}
+.ingredients-detail{
+    width: 50%;
+    padding-right: 10rem;
+}
+.ingredients-detail h5{
+    font-size: 1.5rem;
+}
+.step{
+    font-size: 16px
+}
+.enjoy{
+    text-align: center;
+    background-color: #F2CB05;
+    padding: 3rem;
+    font-weight: 600;
+}
+.enjoy p{
+    margin: 0;
+}

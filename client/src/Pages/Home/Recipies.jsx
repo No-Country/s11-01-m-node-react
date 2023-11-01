@@ -6,7 +6,7 @@ const Recipies = ({selectedIngredients, dietTypeSelected, restartSearch}) => {
 
   return (
     <>
-    <div className='recipies-background'>
+    <div className='background'>
         <div className='search-description'>
             <div className='search-items'>
             <p className='subtitle'>Choseen ingredients:</p>
@@ -20,8 +20,9 @@ const Recipies = ({selectedIngredients, dietTypeSelected, restartSearch}) => {
         </div>
         <button className='new-button' onClick={(e)=>restartSearch(e)}>New Search</button>
         </div>
+        <RecipiesSection dietTypeSelected={dietTypeSelected} selectedIngredients={selectedIngredients}/>
     </div>
-    <RecipiesSection />
+    
     </>
   )
 }

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 //index.ts de routes es el archivo que se encarga de exportar todas las rutas de la aplicación
 const express_1 = require("express");
-const recipes_controllers_1 = require("../controllers/recipes.controllers");
+// import { getRecipeDetails } from "../controllers/recipes.controllers";
 const auth_routes_1 = __importDefault(require("./auth.routes"));
 const search_routes_1 = __importDefault(require("./search.routes"));
 const router = (0, express_1.Router)();
@@ -15,5 +15,6 @@ router.use("/search", search_routes_1.default); //ruta de búsqueda
 // router.use("/uploadposts", postRoutes) //ruta para subir recetas
 // router.use("/uploadcomments", commentRoutes) //ruta para subir comentarios
 // router.use("/savedposts", savedRoutes) //ruta para guardar recetas
-router.use("/recipeDetail", recipes_controllers_1.getRecipeDetails); //ruta para obtener detalle de recetas
+//TODO FIX THIS TOO!
+// router.use("/recipeDetail", getRecipeDetails) //ruta para obtener detalle de recetas
 exports.default = router;

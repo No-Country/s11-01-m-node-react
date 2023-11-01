@@ -1,12 +1,12 @@
 import axios from "axios";
 
 
-export async function getRecipeDetails(recipeId: number): Promise<any> {
+export async function getRecipeDetails(recipeId: number, key: string): Promise<any> {
 
 	try {
 
 		const response = await
-			axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${process.env.apiKey}`
+			axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${key}`
 			);
 
 		const recipeDetails = response.data;
@@ -26,7 +26,7 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 
 		//Obtener detalles del equipo en formato JSON
 
-		const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${process.env.apiKey}`
+		const equipmentResponse = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=${key}`
 		);
 
 		const equipmentData = equipmentResponse.data;
@@ -45,7 +45,10 @@ export async function getRecipeDetails(recipeId: number): Promise<any> {
 			equipment
 		}
 
-	} catch (error) {
+	} catch (error: any) {
+		if (error.response && error.response.status === 401) {
+			return { error: 'API Key limit reached' }
+		}
 		console.error('Error while getting the recipe details', error);
 		return null;
 	}

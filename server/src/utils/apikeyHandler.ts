@@ -1,11 +1,43 @@
-import { Request, Response } from 'express'
+interface ApiKeys {
+	key: string;
+	usage: number;
+	limit: number;
+}
 
-const keyHandler = (_req: Request, res: Response) => {
-	const status: number = res.statusCode;
-	if (status === 402) {
-		console.log('Apikey exhausted, changhing api keys!')
-		
+class KeyHandler {
+	private static instance: KeyHandler;
+	private apiKeys: ApiKeys[] = [];
+	private currentKey!: number;
+
+	constructor() {
+		if (typeof KeyHandler.instance === 'object') {
+			return KeyHandler.instance;
+		}
+
+		KeyHandler.instance = this
+
+		this.apiKeys = [
+			{ key: process.env.KEY_1 as string, usage: 0, limit: 10 },
+			{ key: process.env.KEY_2 as string, usage: 0, limit: 10 },
+			{ key: process.env.KEY_3 as string, usage: 0, limit: 10 },
+			{ key: process.env.KEY_4 as string, usage: 0, limit: 10 },
+			{ key: process.env.KEY_5 as string, usage: 0, limit: 10 },
+		]
+		this.currentKey = 0
+	}
+
+	getKey(): string {
+		let currentKey = this.apiKeys[this.currentKey]
+
+		if (currentKey.usage >= currentKey.limit) {
+			this.currentKey = (this.currentKey + 1) % this.apiKeys.length
+			this.apiKeys[this.currentKey].usage = 0
+			currentKey = this.apiKeys[this.currentKey]
+		}
+
+		currentKey.usage++
+		return currentKey.key
 	}
 }
 
-export default keyHandler;
+export default new KeyHandler();

@@ -68,8 +68,9 @@ function Login() {
      />
      <p className="input-extra-text">Forgot your password?</p>
      </div>
-
+        <Link to='/home'>
       <button type="submit" className="login-button">LOG IN</button>
+      </Link>
       
     </form>
     
