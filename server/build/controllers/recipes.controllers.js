@@ -19,16 +19,11 @@ function getRecipeDetails(recipeId, key) {
         try {
             const response = yield axios_1.default.get(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${key}`);
             const recipeDetails = response.data;
-            const id = recipeDetails.id;
             const title = recipeDetails.title;
             const Image = recipeDetails.image;
             const ReadyinMinutes = recipeDetails.readyInMinutes;
             const Summary = recipeDetails.summary;
             const Instructions = recipeDetails.instructions;
-            const glutenFree = recipeDetails.glutenFree;
-            const vegan = recipeDetails.vegan;
-            const vegetarian = recipeDetails.vegetarian;
-            const dairyFree = recipeDetails.dairyFree;
             const ingredients = recipeDetails.extendedIngredients.map((ingredient) => ({
                 name: ingredient.name,
                 amount: ingredient.amount,
@@ -42,18 +37,13 @@ function getRecipeDetails(recipeId, key) {
                 image: equipment.image
             }));
             return {
-                id,
                 title,
                 Image,
                 ReadyinMinutes,
                 Summary,
                 Instructions,
                 ingredients,
-                equipment,
-                glutenFree,
-                vegan,
-                vegetarian,
-                dairyFree
+                equipment
             };
         }
         catch (error) {
