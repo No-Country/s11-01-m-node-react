@@ -21,6 +21,10 @@ export async function getRecipeDetails(recipeId: number, key: string): Promise<a
 		const vegan = recipeDetails.vegan;
 		const vegetarian = recipeDetails.vegetarian;
 		const dairyFree = recipeDetails.dairyFree;
+		const lowFodmap = recipeDetails.lowFodmap;
+		const veryPopular = recipeDetails.veryPopular;
+		const sustainable = recipeDetails.sustainable;
+		const veryHealthy = recipeDetails.veryHealthy;
 
 
 
@@ -53,7 +57,11 @@ export async function getRecipeDetails(recipeId: number, key: string): Promise<a
 			glutenFree,
 			vegan,
 			vegetarian,
-			dairyFree
+			dairyFree,
+			lowFodmap,
+            veryPopular,
+            sustainable,
+            veryHealthy
 		}
 
 	} catch (error: any) {

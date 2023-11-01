@@ -14,7 +14,7 @@ export const searchController = async (req: Request, res: Response) => {
     let key = APIKEY.getKey()
 
     if (!ingredients || ingredients.length === 0) {
-      return res.status(400).send({ error: "Ingredients are required." });
+      return res.status(200).send(await randomRecipeByDiet(diet, key))
     }
 
     const results = await findByIngredients(ingredients, key);
