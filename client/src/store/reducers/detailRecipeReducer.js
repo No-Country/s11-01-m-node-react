@@ -1,5 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { detailRecipeAction } from "../actions/detailrecipeAction";
+import { detailRecipeAction } from "../actions/detailRecipeAction";
+
 
 
 const initialState = {
