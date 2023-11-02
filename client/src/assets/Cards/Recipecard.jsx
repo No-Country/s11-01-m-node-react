@@ -1,56 +1,56 @@
-import { Icon } from "@iconify/react";
-import './card.css'
-import dietTexts from '../Texts/diets.json'
+import "./card.css";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+// import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
-const Recipecard = ({dietTypeSelected, selectedIngredients}) => {
+const Recipecard = () => {
   
-  const filteredRecipes = dietTexts.recipies.filter((recipeToShow) => {
-    const dietTypeMatch = !dietTypeSelected || recipeToShow.dietType === dietTypeSelected;
-    const ingredientsMatch = !selectedIngredients || 
-      selectedIngredients.every((ingredient) =>
-        recipeToShow.ingredients.some((recipeIngredient) =>
-          recipeIngredient.toLowerCase().includes(ingredient.toLowerCase())
-        )
-      );
-     
-      console.log("selectedIngredients:", selectedIngredients);
-     
+
+  const recipes = useSelector((state) => state.ingredients.recipes);
+  const details = useSelector((state) => state.ingredients.details)
+
+  const [dish, setDish] = useState([])
+  const [detail, setDetil] = useState([])
   
-    return dietTypeMatch && ingredientsMatch
-   
-  });
-  console.log(filteredRecipes)
-  
+  useEffect(() => {
+    setDish(recipes)
+    setDetil(details)
+    console.log("Holaaaaa", dish);
+  }, [recipes, details]);
+
+  // const filteredRecipes = dietTexts.recipies.filter((recipeToShow) => {
+  //   const dietTypeMatch =
+  //     !dietTypeSelected || recipeToShow.dietType === dietTypeSelected;
+  //   const ingredientsMatch =
+  //     !selectedIngredients ||
+  //     selectedIngredients.every((ingredient) =>
+  //       recipeToShow.ingredients.some((recipeIngredient) =>
+  //         recipeIngredient.toLowerCase().includes(ingredient.toLowerCase())
+  //       )
+  //     );
+
+  //   return dietTypeMatch && ingredientsMatch;
+  // });
+
   return (
     <>
-    {filteredRecipes.map((recipie, index)=>(
-    <Link  key={index} to={`/detail/${recipie.id}`}>
-    <div className="card-box">
-        <img src={recipie.img} alt={recipie.name} />
-        <div className="text-box">
-        <p>{recipie.name}</p>
-        <div className="secondary-text-box"> 
-        <div className="diet-card-box">
-        <p className="diet-type-mobile">{recipie.dietType}</p>
-        </div>
-        <div className="second-line">
-        <Icon icon="mdi:clock-outline" className="clock" />
-        <p>{recipie.time}</p>
-        </div>
-        </div>
-       
-        </div>
-        </div>
+      { dish && dish.map((recipie, index) => (
+        <Link key={index} to={`/detail/${index}`}>
+          <div className="card-box">
+            <img src={recipie.image} alt={recipie.title} />
+            <div className="text-box">
+              <p>{recipie.title}</p>
+            </div>
+          </div>
         </Link>
-))}
-        </>
-  )
-}
-Recipecard.propTypes={
-  dietTypeSelected: PropTypes.string,
-  selectedIngredients: PropTypes.array
-}
+      ))}
+    </>
+  );
+};
+// Recipecard.propTypes = {
+//   dietTypeSelected: PropTypes.string,
+//   selectedIngredients: PropTypes.array,
+// };
 
-export default Recipecard
+export default Recipecard;

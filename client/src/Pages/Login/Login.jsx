@@ -4,16 +4,15 @@ import { useDispatch } from "react-redux";
 import Logo from "../../assets/img/logo3.png";
 import { Link } from "react-router-dom";
 import { isMobileOnly } from "react-device-detect";
-import './login.css'
+import "./login.css";
 
 function Login() {
-  
   const [state, setState] = useState({
     email: "",
     password: "",
   });
 
-  const dispatch= useDispatch()
+  const dispatch = useDispatch();
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -23,13 +22,14 @@ function Login() {
 
   const handleOnsubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(state))
-    
+
+    dispatch(loginUser(state));
+
     setState({
-        email: "",
-        password: "",
-      });
-    
+      email: "",
+      password: "",
+    });
+
     
   };
 
