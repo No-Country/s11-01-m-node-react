@@ -1,7 +1,7 @@
 
 .background {
   width: 100vw;
-  padding: 2rem;
+  padding: 2rem 4rem;
   box-sizing: border-box;
 }
 .title-one {
@@ -79,17 +79,18 @@
 .selected-ingredients {
   display: flex;
   margin: .5rem 0 0 0;
+  gap: 12px;
 }
 .ingredients {
   border-radius: 2rem;
-  width: fit-content;
   height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 0.3rem 0 0.5rem;
-  margin-right: 1rem;
   border: 1px solid #F2CB05;
+  margin: 0;
+
 }
 .ingredients p {
   font-size: 14px;
@@ -109,6 +110,9 @@
   font-size: 14px;
   color: #BA0000;
 }
+
+/* diets */
+
 .diets {
   padding: 0 0 1rem 0;
 }
@@ -117,10 +121,10 @@
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 16px
 }
 .diet-img{
-  height: 105%;
+  height: 100%;
   object-fit: cover;
 }
 .diet-img-button{
@@ -143,14 +147,14 @@
 }
 .diet-img-button p{
   position: absolute;
-  margin: -50px 0 0 20px;
+  margin: -45px 0 0 15px;
   color: #fff;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
   z-index: 3;
 }
 .search-button {
-  width: 40%;
+  width: 30%;
   border-radius: 1rem;
   background-color: #F2CB05;
 }
@@ -158,16 +162,6 @@
   background-color: #F2E705;
 }
 
-.diet-img-button::before {
-  content: "";
-  position: absolute;
-  width: 150px;  
-  height: 200px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Adjust the gradient colors and transparency as needed */
-  z-index: 1; 
-  border-radius: 8px;
-  
-}
 .more-button{
   width: 100%;
   text-align: right;
@@ -176,7 +170,7 @@
 /* recipies component */
 
 .search-description{
-  width: 90%;
+  width: 100%;
   display: flex;
   height: 60px;
   align-items: center;
@@ -189,6 +183,7 @@
 }
 .search-items{
  display: flex;
+ margin: 0;
 }
 .subtitle{
   font-weight: 700;
@@ -204,33 +199,27 @@
   display: none;
 }
 /* Recipies Section */
-.recipies-box{
-  padding: 0 30px;
-}
-.recipies-background{
- padding: 24px 0px 0 30px;
-}
+
 .recipies-box h5{
   margin: 0;
   padding: 0;
 }
 .card-section{
-  display: flex;
-  flex-wrap:wrap;
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
   padding: 0;
   margin: 12px 0;
 }
-.card-section p{
-  width: 150px;
-  height: 90px;
-  background-color: #b5bdcc;
-  text-align: center;
-  margin: 0 8px 0 0;
-  line-height: 90px;
-  margin-bottom: 12px;
-}
+@media only screen and (min-width: 1026px) and (max-width: 1180px){
+  .card-section{
+    grid-template-columns: repeat(5, 1fr);
+  }
 
-@media only screen and (min-width: 700px) and (max-width: 1025px){
+}
+@media only screen and (min-width: 779px) and (max-width: 1025px){
   .hero-title{
     font-size: 20px;
     margin-top: -120px;
@@ -264,9 +253,18 @@
   .diet-img{
     width: 100%;
   }
+  .card-section{
+    grid-template-columns: repeat(4, 1fr);
+  }
 
 
 }
+@media only screen and (min-width: 700px) and (max-width: 980px){
+  .card-section{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+  
 
 @media only screen and (min-width: 300px) and (max-width: 699px){
   .search-section{
@@ -278,14 +276,12 @@
   .title-one  {
     margin-top: 14px
   } 
-  .diet-img-button{
-    width: 160px;
-    height: 90px;
-    margin-bottom: 12px;
+  .diet-box{
+    gap:12px
   }
-  .diet-img-button::before{
+  .diet-img-button{
+    width: 48%;
     height: 90px;
-    width: 160px;
   }
   .diet-img{
     width: 100%;
@@ -316,5 +312,8 @@
 }
 .recipies-background{
   padding-bottom: 40px;
+}
+.card-section{
+  grid-template-columns: repeat(2, 1fr);
 }
 }

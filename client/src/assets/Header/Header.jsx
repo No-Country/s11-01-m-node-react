@@ -1,22 +1,21 @@
 import Logo from "../img/logo3.png";
 import "./header.css";
-import { Icon } from "@iconify/react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { isMobileOnly } from "react-device-detect";
+import MobileHeader from "./MobileHeader";
 
 const Header = () => {
-  const location= useLocation()
+ 
   return (
-    location.pathname=== '/' || location.pathname === '/login' && isMobileOnly ? (null):(
+    isMobileOnly ? (<MobileHeader />):(
     <div className="header-backgound">
-      <Link to="/">
+      <Link to="/" className="logo-link">
         <img src={Logo} className="logo" alt="" />
       </Link>
-     
-      {location.pathname === '/'? 
-       <Link to='/login' ><button className="login-button">Login</button></Link>:
-       <Link> <Icon icon="mdi:account-outline" className="icon" /> </Link>}
-     
+     <Link to='/home' className="header-link">Home</Link>
+     <Link className="header-link">Add Posts</Link>
+    <Link className="header-link">Favorites</Link> 
+    <Link to='/login' className="header-link-special">Log in</Link>
     </div>
     )
   );

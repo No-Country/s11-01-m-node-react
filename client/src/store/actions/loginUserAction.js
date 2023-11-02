@@ -41,7 +41,6 @@ export const registerUser = createAsyncThunk(REGISTER, async (payload) => {
 });
 
 export const logOutUser = createAsyncThunk(LOGOUT, async () => {
-
   try {
     const response = await axios.post(`${url}/logout`);
     return response.data;
@@ -49,5 +48,4 @@ export const logOutUser = createAsyncThunk(LOGOUT, async () => {
     console.error("Error en la solicitud:", error);
     throw error;
   }
-
 });

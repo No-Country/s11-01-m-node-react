@@ -1,31 +1,44 @@
 .landing-background{
     width: 100vw;
     height: 90vh;
+    max-width: 1440px;
 }
 .big-img{
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     object-fit: cover;
 }
 
 .title-box{
     position: absolute;
-    margin-top: -140px;
-    width: 100vw;
-    text-align: center;
+    margin-top: -510px;
+    color: #fff;
+    padding: 0 60px;
+}
+.title-box h1{
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 76px;
+}
+.title-box p{
+    font-size: 20px;
+    width: 500px;
 }
 .button{
     background-color: #F2CB05;
-    padding: 14px 90px; 
+    padding: 18px 27px; 
     border-radius: 16px;
+    font-size: 18px;
+    margin-top: 30px;
 }
 .button:hover{
     border: none;
     background-color: #F2E705;
+  
 }
 @media only screen and (min-width: 700px) and (max-width: 1025px){
     .title-box{      
-        margin-top: -150px;
+        margin-top: -600px;
     }
     .button{
         padding: 12px 60px;
@@ -38,22 +51,27 @@
     .big-img{
         height: 100vh;
     }
-    .title-box{
+    .title-box-mobile{
         text-align: center;
-        margin: -150px auto 0px;
+        margin: -250px auto 0px;
         width: 100%;
+        z-index: 5;
     }
     .logo-landing{
-       position: absolute;
-        margin: 2% 10%;
-        width: 80%;
+        width: 70%;
+        margin-top: 33%;
     }
     .logo-back{
         width: 100vw;
-        height: 130px;
-        background: rgba(0, 0, 0, 0.20);
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.25);
         position: absolute;
-        z-index: 2;
-        margin-top: 120px;
+        text-align: center;
+    }
+    .button{
+        padding: 12px 90px;
+        z-index: 10;
+        position: relative;
+        
     }
 }
