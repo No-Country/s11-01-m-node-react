@@ -1,4 +1,4 @@
-const INPUT_INGREDIENTS = "INPUT_INGREDIENTS";
+/* const INPUT_INGREDIENTS = "INPUT_INGREDIENTS"; */
 
 import { createReducer } from "@reduxjs/toolkit";
 import { inputIngredients } from "../actions/ingredientsAction";

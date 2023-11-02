@@ -16,7 +16,7 @@ const Recipecard = () => {
   useEffect(() => {
     setDish(recipes)
     setDetil(details)
-    console.log("Holaaaaa", dish);
+    console.log("Holaaaaa", dish, detail);
   }, [recipes, details]);
 
   // const filteredRecipes = dietTexts.recipies.filter((recipeToShow) => {
