@@ -1,3 +1,12 @@
+.detail-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.item-header{
+    margin: 0;
+}
 .hero-recipie-detail{
     width: 100%;
     display: flex;
@@ -50,4 +59,57 @@
 }
 .enjoy p{
     margin: 0;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 699px){
+    .hero-recipie-detail{
+        flex-direction: column;
+    }
+    .text-box-detail{
+        width: 100% ;
+        box-sizing: border-box;
+    }
+    .text-box-detail h5{
+        font-size: 1.5rem;
+    }
+    .img-box-detail{
+        width: 100%;
+        height: auto;
+    }
+    .instructions{
+        flex-direction: column;
+    }
+    .ingredients-detail{
+        width: 100%;
+    }
+    .ingredients-detail h5{
+        margin: .5rem 0 0;
+    }
+    .ingredients-detail p{
+        margin: .2rem .2rem 
+    }
+    .ingredients-detail ol{
+    padding-inline-start: 16px;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1024px){
+    .img-box-detail{
+        height: 18rem;
+    }
+    .img-box-detail img{
+        height: 100%;
+    }
+    .ingredients-detail{
+        padding-right: 0rem;
+    }
+    .ingredients-detail h5{
+        margin: 1rem 0 0;
+    }
+    .ingredients-detail p{
+        margin: 1rem .2rem 
+    }
+    .ingredients-detail ol{
+    padding-inline-start: 16px;
+    }
 }

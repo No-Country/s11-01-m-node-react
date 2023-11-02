@@ -7,17 +7,14 @@ const Recipies = ({ selectedIngredients, dietTypeSelected, restartSearch }) => {
       <div className="background">
         <div className="search-description">
           <div className="search-items">
-            <p className="subtitle">Choseen ingredients:</p>
+            <p className={selectedIngredients === "" ? "display-none": "subtitle"}>Choseen ingredients:</p>
             {selectedIngredients.map((ingredient, index) => (
               <div key={index} className="ingredient-list">
                 <p>{ingredient}</p>
               </div>
             ))}
             <p
-              className={dietTypeSelected === "" ? "display-none" : "subtitle"}
-            >
-              Diet type:
-            </p>
+              className={dietTypeSelected === "" ? "display-none" : "subtitle"}> Diet type: </p>
             <p>{dietTypeSelected}</p>
           </div>
           <button className="new-button" onClick={(e) => restartSearch(e)}>

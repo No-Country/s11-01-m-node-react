@@ -2,8 +2,8 @@
 const INPUT_INGREDIENTS = "INPUT_INGREDIENTS";
 
 // Importación de bibliotecas y funciones necesarias
-import queryString from "query-string";
-import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
+
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // URL de la API a la que se realizarán las solicitudes

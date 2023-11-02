@@ -1,9 +1,8 @@
 import "./detail.css";
 import { useParams, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import dietTexts from "../../assets/Texts/diets.json";
+import { useSelector } from "react-redux";
 import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const RecipiesDetail = () => {
   const { id } = useParams();
@@ -14,16 +13,22 @@ const RecipiesDetail = () => {
   console.log(details[id].details);
 
   const [data, setData] = useState(details[id].details);
-  console.log(data);
+  console.log(setData);
 
   return (
     <>
       <div className="background">
-        <>
+        <div className=" detail-header">
+          <div className="item-header">
           <Link to="/home">Home | </Link>
-          <Link>Recipies | </Link>
           <Link>{data?.title}</Link>
-        </>
+          </div>
+          <div className="item-header">
+          <Link><button className="new-button">
+            New Search
+          </button></Link>
+          </div>
+        </div>
         <div className="hero-recipie-detail">
           <div className="text-box-detail">
             <h5>{data?.title}</h5>
@@ -37,7 +42,7 @@ const RecipiesDetail = () => {
         <div className="instructions">
           <div className="ingredients-detail">
             <h5>Ingredients</h5>
-            {data?.ingredients.map((el, key) =>  <p key={el.name}>{el.name} - {el.amount} {el.unit}</p>)}
+            {data?.ingredients.map((el, key) =>  <p key={key}>{el.name} - {el.amount} {el.unit}</p>)}
           </div>
           <div className="ingredients-detail">
             <h5>Directions</h5>
